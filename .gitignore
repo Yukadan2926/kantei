@@ -4,7 +4,6 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
-Assets/TextMeshPro/
  
 # Visual Studio cache directory
 .vs/
@@ -39,3 +38,6 @@ sysinfo.txt
  
 # Crashlytics generated file
 Assets/StreamingAssets/crashlytics-build.properties
+
+Assets/TextMeshPro/
+*NotoSansJP*
