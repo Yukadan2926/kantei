@@ -1,5 +1,6 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +17,8 @@ public class SceneLoader : MonoBehaviour
         stageManager = GetComponent<StageManager>();
         if (stageManager != null )
         {
-            additiveScenes.Add(stageManager.stages[0]);
+            additiveScenes.Add($"Request_{stageManager.requests[0]}");
+            stageManager.AddOnClickCallack();
         }
 
         foreach (string str in additiveScenes)
@@ -27,20 +29,21 @@ public class SceneLoader : MonoBehaviour
         fader = GetComponent<Fader>();
     }
 
-    public void ProceedStage(string str)
+    public void ProceedStage(SceneAsset result)
     {
-        var stages = stageManager.stages;
+        var requests = stageManager.requests;
         var index = stageManager.index;
-        SceneManager.UnloadSceneAsync(stages[index]);
+        SceneManager.UnloadSceneAsync($"Request_{requests[index]}");
         stageManager.index = ++index;
 
-        if (index < stages.Length)
+        if (index < requests.Length)
         {
-            SceneManager.LoadScene(stages[index], LoadSceneMode.Additive);
+            SceneManager.LoadScene($"Request_{requests[index]}", LoadSceneMode.Additive);
+            stageManager.AddOnClickCallack();
         }
         else
         {
-            SceneManager.LoadScene(str);
+            SceneManager.LoadScene(result.name);
         }
     }
 
@@ -55,17 +58,22 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(str);
     }
 
-    public void TransStage(string result)
+    public void LoadScene(SceneAsset scene)
+    {
+        SceneManager.LoadScene(scene.name);
+    }
+
+    public void TransStage(SceneAsset result)
     {
         StartCoroutine(transition(result, delaySecond, true));
     }
 
-    public void TransScene(string sceneName)
+    public void TransScene(SceneAsset scene)
     {
-        StartCoroutine(transition(sceneName, delaySecond, false));
+        StartCoroutine(transition(scene, delaySecond, false));
     }
 
-    IEnumerator transition(string str, float delay, bool stage)
+    IEnumerator transition(SceneAsset scene, float delay, bool stage)
     {
         fader.Fade(delaySecond);
 
@@ -73,11 +81,11 @@ public class SceneLoader : MonoBehaviour
 
         if (stage)
         {
-            ProceedStage(str);
+            ProceedStage(scene);
         }
         else
         {
-            LoadScene(str);
+            LoadScene(scene);
         }
 
         fader.Fade(delay);

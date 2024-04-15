@@ -1,20 +1,20 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StageSelector : MonoBehaviour
 {
-    public static string[] StageList { get; set; } = { "Request_Tubo" };
+    public static string[] RequestList { get; set; } = { "Tubo" };
 
-    [SerializeField] List<string> stages;
+    [SerializeField] List<string> requests;
 
-    public void AddStage(string stageName)
+    public void AddStage(RequestParam request)
     {
-        stages.Add(stageName);
+        requests.Add(request.SceneName);
     }
 
     private void OnDestroy()
     {
-        StageList = stages.ToArray();
+        RequestList = requests.ToArray();
     }
 }

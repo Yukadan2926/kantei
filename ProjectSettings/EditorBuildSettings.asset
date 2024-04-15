@@ -12,18 +12,22 @@ EditorBuildSettings:
     path: Assets/Scenes/Room.unity
     guid: 2f07cecfe2dd21d43843c5172dfd7ffa
   - enabled: 1
-    path: Assets/Scenes/SearchScreen.unity
-    guid: fe75d3ba2230ba44a93ce3b5fc3a3c75
-  - enabled: 1
     path: Assets/Scenes/Result.unity
     guid: 3a6514ef2c41d134f9d222da8fe555fe
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/SearchScreen.unity
+    guid: fe75d3ba2230ba44a93ce3b5fc3a3c75
   - enabled: 1
     path: Assets/Scenes/Request_Tubo.unity
     guid: d35c7f5843ffc8f4daf903fccb701d97
   - enabled: 1
-    path: Assets/Scenes/Request_Kaiga.unity
+    path: Assets/Scenes/Request_TheGleaners.unity
     guid: 5e86fb834eb45454c842e7ad25416a69
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/Request_DeLingon'sPaintings.unity
+    guid: b5a944f31cde789499dbec56343ee9f0
+  - enabled: 1
+    path: Assets/Scenes/Request_EiffelTower.unity
+    guid: 1bb9bae77da47d140bca2392f72d979d
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: cce9a3a37891cdb4a82ed10dfc6b0c73, type: 2}
