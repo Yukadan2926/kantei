@@ -21,7 +21,6 @@ public class StageManager : MonoBehaviour
 
     public void AddScore()
     {
-        Debug.Log("true");
         ScoreLoader.Score += 1;
     }
 
@@ -35,12 +34,10 @@ public class StageManager : MonoBehaviour
         if (requestData.Answer)
         {
             realButton.onClick.AddListener(AddScore);
-            Debug.Log("real");
         }
         else
         {
             fakeButton.onClick.AddListener(AddScore);
-            Debug.Log("fake");
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -38,6 +40,7 @@ public class SceneLoader : MonoBehaviour
 
         if (index < requests.Length)
         {
+            SceneManager.LoadScene(additiveScenes[0], LoadSceneMode.Additive);
             SceneManager.LoadScene($"Request_{requests[index]}", LoadSceneMode.Additive);
             stageManager.AddOnClickCallack();
         }
@@ -65,6 +68,7 @@ public class SceneLoader : MonoBehaviour
 
     public void TransStage(SceneAsset result)
     {
+        SceneManager.UnloadSceneAsync("SearchScreen");
         StartCoroutine(transition(result, delaySecond, true));
     }
 
