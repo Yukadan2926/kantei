@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +18,9 @@ public class Shape : MonoBehaviour
 
     Vector3 pointDist;
     EventTrigger trigger;
+
+    [SerializeField] float rollSpeed = 1.0f;
+    bool rolling = false;
 
     private void Start()
     {
@@ -52,7 +55,7 @@ public class Shape : MonoBehaviour
 
         if (isClicked)
         {
-            //  •½–Êã‚Ìƒhƒ‰ƒbƒO‚©‚çA‹…–Êã‚Ìƒhƒ‰ƒbƒO‹æŠÔiABj‚ğ‹‚ß‚é
+            //  å¹³é¢ä¸Šã®ãƒ‰ãƒ©ãƒƒã‚°ã‹ã‚‰ã€çƒé¢ä¸Šã®ãƒ‰ãƒ©ãƒƒã‚°åŒºé–“ï¼ˆABï¼‰ã‚’æ±‚ã‚ã‚‹
             InputHepler.GetMouseDragFromTo(transform, Camera.main, out var from, out var to);
 
             var fromPos = Vector3.zero;
@@ -65,17 +68,24 @@ public class Shape : MonoBehaviour
                 fromPos = from.point;
                 toPos = to.point;
             }
+            else
+            {
+                rolling = false;
+            }
 
-            //  ‰ñ“]²axis‚ÍA‹…–Êã‚Ì’†S“_iOj‚ÆAB‚©‚ç‚È‚é•½–Ê‚Ì–@ü
-            var vecA = fromPos - transform.position;
-            var vecB = toPos - transform.position;
-            var axis = Vector3.Cross(vecA, vecB);
+            if (rolling)
+            {
+                //  å›è»¢è»¸axisã¯ã€çƒé¢ä¸Šã®ä¸­å¿ƒç‚¹ï¼ˆOï¼‰ã¨ABã‹ã‚‰ãªã‚‹å¹³é¢ã®æ³•ç·š
+                var vecA = fromPos - transform.position;
+                var vecB = toPos - transform.position;
+                var axis = Vector3.Cross(vecA, vecB);
 
-            //  ‹…–Êã‚Ì’†S“_iOj‚©‚ç²axis‚É‘Î‚·‚é‰ñ“]Šp“xiƒÆj‚ğ‹‚ß‚é
-            var dragAngle = Vector3.SignedAngle(fromPos, toPos, axis);
+                //  çƒé¢ä¸Šã®ä¸­å¿ƒç‚¹ï¼ˆOï¼‰ã‹ã‚‰è»¸axisã«å¯¾ã™ã‚‹å›è»¢è§’åº¦ï¼ˆÎ¸ï¼‰ã‚’æ±‚ã‚ã‚‹
+                var dragAngle = Vector3.SignedAngle(fromPos, toPos, axis);
 
-            //  ‰ñ“]²axis‚É‘Î‚µ‚ÄƒÆ‰ñ“]‚³‚¹‚é
-            transform.Rotate(axis, dragAngle, Space.World);
+                //  å›è»¢è»¸axisã«å¯¾ã—ã¦Î¸å›è»¢ã•ã›ã‚‹
+                transform.Rotate(axis, dragAngle * rollSpeed, Space.World);
+            }
         }
     }
 
@@ -106,15 +116,7 @@ public class Shape : MonoBehaviour
 
         if (isClicked)
         {
-            //Ray ray = Camera.main.ScreenPointToRay(pos);
-
-            //RaycastHit[] hits = Physics.RaycastAll(ray);
-            //string str = "";
-            //foreach(var hit in hits)
-            //{
-            //    str += hit.collider.gameObject.tag + ", ";
-            //}
-            //Debug.Log(str);
+            rolling = true;
         }
         else
         {

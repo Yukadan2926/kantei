@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,7 +30,7 @@ public class SceneLoader : MonoBehaviour
         fader = GetComponent<Fader>();
     }
 
-    public void ProceedStage(SceneAsset result)
+    public void ProceedStage(string result)
     {
         var requests = stageManager.requests;
         var index = stageManager.index;
@@ -46,7 +45,7 @@ public class SceneLoader : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(result.name);
+            SceneManager.LoadScene(result);
         }
     }
 
@@ -61,23 +60,18 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(str);
     }
 
-    public void LoadScene(SceneAsset scene)
-    {
-        SceneManager.LoadScene(scene.name);
-    }
-
-    public void TransStage(SceneAsset result)
+    public void TransStage(string result)
     {
         SceneManager.UnloadSceneAsync("SearchScreen");
         StartCoroutine(transition(result, delaySecond, true));
     }
 
-    public void TransScene(SceneAsset scene)
+    public void TransScene(string scene)
     {
         StartCoroutine(transition(scene, delaySecond, false));
     }
 
-    IEnumerator transition(SceneAsset scene, float delay, bool stage)
+    IEnumerator transition(string scene, float delay, bool stage)
     {
         fader.Fade(delaySecond);
 

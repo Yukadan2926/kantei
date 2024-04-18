@@ -419,6 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSec: 0.2
   distance: 3
+  rollSpeed: 3
 --- !u!1 &378243403
 GameObject:
   m_ObjectHideFlags: 0
