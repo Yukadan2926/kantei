@@ -1,3 +1,4 @@
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,11 +8,12 @@ using UnityEngine.UI;
 public class SearchBar : MonoBehaviour
 {
     [SerializeField] TMP_InputField inputField;
-    [SerializeField] GameObject dropdownObject;
     [SerializeField] GameObject notFound;
-    [SerializeField] List<GameObject> tabs = new List<GameObject>();
 
-    TMP_Dropdown dropdownComp;
+    [SerializeField] TMP_Dropdown historyDropDown;
+    [SerializeField] TMP_Dropdown suggestionDropDown;
+
+    [SerializeField] List<GameObject> tabs = new List<GameObject>();
 
     List<Toggle> toggles = new List<Toggle>();
     List<tabInfo> infos = new List<tabInfo>();
@@ -25,15 +27,31 @@ public class SearchBar : MonoBehaviour
             infos.Add(tab.GetComponent<tabInfo>());
         }
 
-        dropdownComp = dropdownObject.GetComponent<TMP_Dropdown>();
         AddHistory(infos[0]);
     }
 
-    public void ReadInput()
+    public void OnIFEndEdit()
     {
         string str = inputField.text;
-        if (Jump(str))
+        ChangeTab(str);
+    }
+
+    private void ChangeTab(string str)
+    {
+        int index = MatchAll(str);
+        if (index >= 0)
         {
+            toggles[index].isOn = true;
+
+            if (infos[index].num < 0)
+            {
+                AddHistory(infos[index]);
+            }
+            else
+            {
+                historyDropDown.value = infos[index].num;
+            }
+
             inputField.text = "";
         }
         else if (str != "")
@@ -42,15 +60,37 @@ public class SearchBar : MonoBehaviour
         }
     }
 
-    public void ReadDropdown()
+    public void UpdateSuggestion()
     {
-        int cnt = -1;
-        foreach (tabInfo info in infos)
+        suggestionDropDown.Hide();
+        suggestionDropDown.ClearOptions();
+
+        string str = inputField.text;
+        List<string> suggestions = MatchBeginList(str);
+        if (suggestions.Count > 0)
         {
-            cnt++;
-            if (dropdownComp.value == info.num)
+            foreach(string text in suggestions)
             {
-                toggles[cnt].isOn = true;
+                suggestionDropDown.options.Add(new TMP_Dropdown.OptionData(text));
+            }
+        }
+
+        suggestionDropDown.Show();
+    }
+
+    public void OnSuggestionSelected()
+    {
+        string str = suggestionDropDown.options[suggestionDropDown.value].text;
+        ChangeTab(str);
+    }
+
+    public void JumpHistory()
+    {
+        for (int i = 0; i < infos.Count; i++)
+        {
+            if (historyDropDown.value == infos[i].num)
+            {
+                toggles[i].isOn = true;
             }
         }
     }
@@ -58,52 +98,71 @@ public class SearchBar : MonoBehaviour
     public void ReturnHomeTab()
     {
         toggles[0].isOn = true;
-        dropdownComp.value = 0;
+        historyDropDown.value = 0;
     }
 
     public void AddHistory(tabInfo info)
     {
-        dropdownComp.options.Add(new TMP_Dropdown.OptionData(info.tabName));
-        dropdownComp.value = dropdownComp.options.Count - 1;
-        dropdownComp.RefreshShownValue();
-        info.num = dropdownComp.options.Count - 1;
+        historyDropDown.options.Add(new TMP_Dropdown.OptionData(info.tabName));
+        historyDropDown.value = historyDropDown.options.Count - 1;
+        historyDropDown.RefreshShownValue();
+        info.num = historyDropDown.options.Count - 1;
     }
 
-    public bool Jump(string str)
+    public int MatchAll(string str)
     {
-        int cnt = -1;
-        foreach (tabInfo info in infos)
+        for (int i = 0; i < infos.Count; i++)
         {
-            cnt++;
-            if (str.Equals(info.tabName))
+            if (infos[i].tabName.Equals(str))
             {
-                toggles[cnt].isOn = true;
-
-                if (info.num < 0)
-                {
-                    AddHistory(info);
-                }
-                else
-                {
-                    dropdownComp.value = info.num;
-                }
-
-                return true;
+                return i;
             }
         }
 
-        return false;
+        return -1;
+    }
+
+    private List<string> MatchBeginList(string str)
+    {
+        List<string> list = new List<string>();
+        if (str == "")
+        {
+            return list;
+        }
+
+        foreach (tabInfo info in infos)
+        {
+            if (info.tabName.StartsWith(str))
+            {
+                list.Add(info.tabName);
+            }
+        }
+
+        return list;
     }
 
     public void LinkCheck(TextMeshProUGUI tmp)
     {
         Vector2 pos = Input.mousePosition;
-        int index = TMP_TextUtilities.FindIntersectingLink(tmp, pos, null);
+        int link = TMP_TextUtilities.FindIntersectingLink(tmp, pos, null);
 
-        if (index != -1)
+        if (link != -1)
         {
-            string text = tmp.textInfo.linkInfo[index].GetLinkText();
-            Jump(text);
+            string text = tmp.textInfo.linkInfo[link].GetLinkText();
+            int index = MatchAll(text);
+            if (index >= 0)
+            {
+                toggles[index].isOn = true;
+
+                if (infos[index].num < 0)
+                {
+                    AddHistory(infos[index]);
+                }
+                else
+                {
+                    historyDropDown.value = infos[index].num;
+                }
+            }
         }
     }
 }
