@@ -17,40 +17,33 @@ public class ScoreLoader : MonoBehaviour
         stageLabel.text = Stage;
         scoreLabel.text = $"{Score} / {StageSelector.RequestList.Length}";
 
-        if (Stage.Equals("Day1"))
+        if (Stage == "Day1")
         {
-            StageSelector.StageFlag[0] = 2;
-            StageSelector.StageFlag[1] = 1;
-        }
-
-        if (Stage.Equals("Day2"))
-        {
-            StageSelector.StageFlag[1] = 2;
-
             if (Score > 0)
             {
-                StageSelector.StageFlag[2] = 1;
+                StageSelector.ClearFlagTable |= StageBit.Day1_1;
+                StageSelector.AppearFlagTable |= StageBit.Day2_1;
+            }
+        }
+
+        if (Stage == "Day2")
+        {
+            if (Score > 0)
+            {
+                StageSelector.ClearFlagTable |= StageBit.Day2_1;
+                StageSelector.AppearFlagTable |= StageBit.Day3_1;
             }
             else
             {
-                StageSelector.StageFlag[3] = 1;
+                StageSelector.ClearFlagTable |= StageBit.Day2_1;
+                StageSelector.AppearFlagTable |= StageBit.Day3_2;
             }
-        }
-
-        if (Stage.Equals("Day3-1"))
-        {
-            StageSelector.StageFlag[2] = 2;
-        }
-
-        if (Stage.Equals("Day3-2"))
-        {
-            StageSelector.StageFlag[3] = 2;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

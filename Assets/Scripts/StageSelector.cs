@@ -5,19 +5,21 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum StageBit
+{
+    None,
+    Day1_1 = 0b_0001,
+    Day2_1 = 0b_0010,
+    Day3_1 = 0b_0100,
+    Day3_2 = 0b_1000,
+}
+
 public class StageSelector : MonoBehaviour
 {
-    public static int[] StageFlag { get; set; } = { 1, 0, 0, 0 };
+    public static StageBit AppearFlagTable = StageBit.Day1_1;
+    public static StageBit ClearFlagTable = StageBit.None;
 
     public static string[] RequestList { get; set; } = { "Tubo" };
-
-    public enum StageNum
-    {
-        Day1_1,
-        Day2_1,
-        Day3_1,
-        Day3_2,
-    }
 
     [SerializeField] List<Image> buttonList;
     [SerializeField] List<Canvas> canvasList;
@@ -29,32 +31,25 @@ public class StageSelector : MonoBehaviour
     {
         requests = new List<string>();
 
+        canvasList[0].enabled = AppearFlagTable.HasFlag(StageBit.Day1_1);
+        canvasList[1].enabled = AppearFlagTable.HasFlag(StageBit.Day2_1);
+        canvasList[2].enabled = AppearFlagTable.HasFlag(StageBit.Day3_1) ||
+                                AppearFlagTable.HasFlag(StageBit.Day3_2);
 
-        int index = -1;
-        foreach (var button in buttonList)
+        int flagTable = (int)AppearFlagTable;
+        for (int i = 0; i < buttonList.Count; i++)
         {
-            index++;
-            button.enabled = StageFlag[index] >= 1;
+            buttonList[i].enabled = flagTable % 2 == 1;
+            flagTable >>= 1;
         }
 
-        canvasList[0].enabled = StageFlag[0] >= 1;
-        canvasList[1].enabled = StageFlag[1] >= 1;
-        canvasList[2].enabled = StageFlag[2] >= 1 || StageFlag[3] >= 1;
+        textList[0].enabled = ClearFlagTable.HasFlag(StageBit.Day1_1);
+        textList[1].enabled = ClearFlagTable.HasFlag(StageBit.Day2_1);
+        textList[2].enabled = ClearFlagTable.HasFlag(StageBit.Day2_1);
 
-        textList[0].enabled = StageFlag[0] >= 2;
-        textList[1].enabled = StageFlag[1] >= 2;
-        textList[2].enabled = StageFlag[1] >= 2;
-
-        if (textList[0].enabled)
-        {
-            textList[0].text = StageFlag[1] >= 1 ? "o" : "x";
-        }
-
-        if (textList[1].enabled)
-        {
-            textList[1].text = StageFlag[2] >= 1 ? "o" : "x";
-            textList[2].text = StageFlag[3] >= 1 ? "o" : "x";
-        }
+        textList[0].text = AppearFlagTable.HasFlag(StageBit.Day2_1) ? "o" : "x";
+        textList[1].text = AppearFlagTable.HasFlag(StageBit.Day3_1) ? "o" : "x";
+        textList[2].text = AppearFlagTable.HasFlag(StageBit.Day3_2) ? "o" : "x";
     }
 
     public void Select(string str)
