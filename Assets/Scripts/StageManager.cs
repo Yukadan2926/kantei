@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class StageManager : MonoBehaviour
 {
     public int index = 0;
-    public string[] requests;
+    public RequestParam[] requests;
 
     [SerializeField] Button realButton;
     [SerializeField] Button fakeButton;
@@ -29,9 +29,7 @@ public class StageManager : MonoBehaviour
         realButton.onClick.RemoveAllListeners();
         fakeButton.onClick.RemoveAllListeners();
 
-        var path = $"{requests[index]}_Data";
-        var requestData = Resources.Load(path) as RequestParam;
-        if (requestData.Answer)
+        if (requests[index].Answer)
         {
             realButton.onClick.AddListener(AddScore);
         }

@@ -318,8 +318,9 @@ GameObject:
   - component: {fileID: 358719815}
   - component: {fileID: 358719814}
   - component: {fileID: 358719813}
+  - component: {fileID: 358719816}
   m_Layer: 5
-  m_Name: 1
+  m_Name: Node_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -388,28 +389,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1549907392}
-        m_TargetAssemblyTypeName: StageSelector, Assembly-CSharp
-        m_MethodName: Select
-        m_Mode: 5
+      - m_Target: {fileID: 358719816}
+        m_TargetAssemblyTypeName: NodeInfo, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Day2
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1549907392}
-        m_TargetAssemblyTypeName: StageSelector, Assembly-CSharp
-        m_MethodName: AddStage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 6d831b07a9fde774899b62535fcc2b76, type: 2}
-          m_ObjectArgumentAssemblyTypeName: RequestParam, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Kaiga
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1549907394}
@@ -462,6 +451,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358719811}
   m_CullTransparentMesh: 1
+--- !u!114 &358719816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358719811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131b7fee48da81740911cbadcd371a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  date: 2
+  stage: 2
+  AppearCondition: 00000000
+  ClearCondition: 01000000
+  ActionCondition: 00000000
+  requests:
+  - {fileID: 11400000, guid: 6d831b07a9fde774899b62535fcc2b76, type: 2}
 --- !u!1 &625067340
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +572,7 @@ GameObject:
   - component: {fileID: 626691059}
   - component: {fileID: 626691058}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: DateLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -733,8 +741,9 @@ GameObject:
   - component: {fileID: 779681330}
   - component: {fileID: 779681329}
   - component: {fileID: 779681328}
+  - component: {fileID: 779681331}
   m_Layer: 5
-  m_Name: 1
+  m_Name: Node_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -803,28 +812,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1549907392}
-        m_TargetAssemblyTypeName: StageSelector, Assembly-CSharp
-        m_MethodName: Select
-        m_Mode: 5
+      - m_Target: {fileID: 779681331}
+        m_TargetAssemblyTypeName: NodeInfo, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Day1
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1549907392}
-        m_TargetAssemblyTypeName: StageSelector, Assembly-CSharp
-        m_MethodName: AddStage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 03ec34dff946e0143b160af4b083814c, type: 2}
-          m_ObjectArgumentAssemblyTypeName: RequestParam, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Tubo
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1549907394}
@@ -877,6 +874,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779681326}
   m_CullTransparentMesh: 1
+--- !u!114 &779681331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779681326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131b7fee48da81740911cbadcd371a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  date: 1
+  stage: 1
+  AppearCondition: 00000000
+  ClearCondition: 00000000
+  ActionCondition: 00000000
+  requests:
+  - {fileID: 11400000, guid: 03ec34dff946e0143b160af4b083814c, type: 2}
 --- !u!1 &807336106
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +905,7 @@ GameObject:
   - component: {fileID: 807336108}
   - component: {fileID: 807336109}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Edge_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1023,7 +1039,7 @@ GameObject:
   - component: {fileID: 1067195264}
   - component: {fileID: 1067195263}
   m_Layer: 5
-  m_Name: 2
+  m_Name: Day_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1102,7 +1118,7 @@ GameObject:
   - component: {fileID: 1126566590}
   - component: {fileID: 1126566589}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: DateLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1236,7 +1252,7 @@ GameObject:
   - component: {fileID: 1145559820}
   - component: {fileID: 1145559819}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: DateLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1370,7 +1386,7 @@ GameObject:
   - component: {fileID: 1174900414}
   - component: {fileID: 1174900413}
   m_Layer: 5
-  m_Name: 3
+  m_Name: Day_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1450,8 +1466,9 @@ GameObject:
   - component: {fileID: 1267563825}
   - component: {fileID: 1267563823}
   - component: {fileID: 1267563824}
+  - component: {fileID: 1267563827}
   m_Layer: 5
-  m_Name: 2
+  m_Name: Node_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1531,25 +1548,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1549907392}
-        m_TargetAssemblyTypeName: StageSelector, Assembly-CSharp
-        m_MethodName: Select
-        m_Mode: 5
+      - m_Target: {fileID: 1267563827}
+        m_TargetAssemblyTypeName: NodeInfo, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Day3-2
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1549907392}
-        m_TargetAssemblyTypeName: StageSelector, Assembly-CSharp
-        m_MethodName: AddStage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 6ffef6df7f343b74e97a5c5d0891d2ee, type: 2}
-          m_ObjectArgumentAssemblyTypeName: RequestParam, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1594,6 +1599,25 @@ RectTransform:
   m_AnchoredPosition: {x: -100, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1267563827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267563822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131b7fee48da81740911cbadcd371a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  date: 3
+  stage: 8
+  AppearCondition: 00000000
+  ClearCondition: 00000000
+  ActionCondition: 01000000
+  requests:
+  - {fileID: 11400000, guid: efa060f9f534d8c409450d271fa66691, type: 2}
 --- !u!1 &1320670020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,19 +1740,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf86c7d21ca4f448be6cfec3e6983f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonList:
-  - {fileID: 779681329}
-  - {fileID: 358719814}
-  - {fileID: 1588120389}
-  - {fileID: 1267563823}
-  canvasList:
-  - {fileID: 1677705474}
-  - {fileID: 1067195264}
-  - {fileID: 1174900414}
-  textList:
-  - {fileID: 807336109}
-  - {fileID: 1730386095}
-  - {fileID: 1692704888}
 --- !u!4 &1549907393
 Transform:
   m_ObjectHideFlags: 0
@@ -1769,8 +1780,9 @@ GameObject:
   - component: {fileID: 1588120388}
   - component: {fileID: 1588120389}
   - component: {fileID: 1588120387}
+  - component: {fileID: 1588120390}
   m_Layer: 5
-  m_Name: 1
+  m_Name: Node_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1839,25 +1851,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1549907392}
-        m_TargetAssemblyTypeName: StageSelector, Assembly-CSharp
-        m_MethodName: Select
-        m_Mode: 5
+      - m_Target: {fileID: 1588120390}
+        m_TargetAssemblyTypeName: NodeInfo, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Day3-1
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1549907392}
-        m_TargetAssemblyTypeName: StageSelector, Assembly-CSharp
-        m_MethodName: AddStage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: efa060f9f534d8c409450d271fa66691, type: 2}
-          m_ObjectArgumentAssemblyTypeName: RequestParam, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1913,6 +1913,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1588120390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588120385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131b7fee48da81740911cbadcd371a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  date: 3
+  stage: 4
+  AppearCondition: 00000000
+  ClearCondition: 02000000
+  ActionCondition: 00000000
+  requests:
+  - {fileID: 11400000, guid: 6ffef6df7f343b74e97a5c5d0891d2ee, type: 2}
 --- !u!1 &1593883845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,7 +2012,7 @@ GameObject:
   - component: {fileID: 1677705474}
   - component: {fileID: 1677705473}
   m_Layer: 5
-  m_Name: 1
+  m_Name: Day_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2072,7 +2091,7 @@ GameObject:
   - component: {fileID: 1692704889}
   - component: {fileID: 1692704888}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Edge_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2206,7 +2225,7 @@ GameObject:
   - component: {fileID: 1730386094}
   - component: {fileID: 1730386095}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Edge_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

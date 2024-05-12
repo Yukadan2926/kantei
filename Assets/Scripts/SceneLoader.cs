@@ -18,7 +18,7 @@ public class SceneLoader : MonoBehaviour
         stageManager = GetComponent<StageManager>();
         if (stageManager != null )
         {
-            additiveScenes.Add($"Request_{stageManager.requests[0]}");
+            additiveScenes.Add($"Request_{stageManager.requests[0].SceneName}");
             stageManager.AddOnClickCallack();
         }
 
@@ -32,15 +32,15 @@ public class SceneLoader : MonoBehaviour
 
     public void ProceedStage(string result)
     {
-        var requests = stageManager.requests;
-        var index = stageManager.index;
-        SceneManager.UnloadSceneAsync($"Request_{requests[index]}");
+        RequestParam[] requests = stageManager.requests;
+        int index = stageManager.index;
+        SceneManager.UnloadSceneAsync($"Request_{requests[index].SceneName}");
         stageManager.index = ++index;
 
         if (index < requests.Length)
         {
             SceneManager.LoadScene(additiveScenes[0], LoadSceneMode.Additive);
-            SceneManager.LoadScene($"Request_{requests[index]}", LoadSceneMode.Additive);
+            SceneManager.LoadScene($"Request_{requests[index].SceneName}", LoadSceneMode.Additive);
             stageManager.AddOnClickCallack();
         }
         else
