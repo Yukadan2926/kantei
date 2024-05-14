@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ScoreLoader : MonoBehaviour
 {
-    public static StageBit Stage = StageBit.None;
+    public static NodeInfo Stage;
     public static int Score = 0;
 
     [SerializeField] TextMeshProUGUI stageLabel;
@@ -14,20 +14,20 @@ public class ScoreLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stageLabel.text = Stage.ToString();
+        stageLabel.text = Stage.stage.ToString();
         scoreLabel.text = $"{Score} / {StageSelector.RequestList.Length}";
 
-        if (Stage == StageBit.Day1_1)
+        if (Stage.stage == StageBit.Day1_1)
         {
-            if (Score > 0)
+            if (Score > Stage.border)
             {
                 StageSelector.ClearFlagTable |= StageBit.Day1_1;
             }
         }
 
-        if (Stage == StageBit.Day2_1)
+        if (Stage.stage == StageBit.Day2_1)
         {
-            if (Score > 0)
+            if (Score > Stage.border)
             {
                 StageSelector.ClearFlagTable |= StageBit.Day2_1;
             }

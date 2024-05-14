@@ -5,53 +5,19 @@ using UnityEngine.UI;
 
 public class NodeInfo : MonoBehaviour
 {
-    [SerializeField] int date;
-    [SerializeField] StageBit stage;
+    public int date;
+    public StageBit stage;
+    public int border;
+    public Image image;
 
-    [SerializeField] List<StageBit> AppearCondition;
-    [SerializeField] List<StageBit> ClearCondition;
-    [SerializeField] List<ActionBit> ActionCondition;
-    StageBit aprc;
-    StageBit clrc;
-    ActionBit actc;
-
-    [SerializeField] List<RequestParam> requests;
-
-    Image image;
-
-    private void Start()
-    {
-        aprc = StageBit.None;
-        clrc = StageBit.None;
-        actc = ActionBit.None;
-        foreach (var condition in AppearCondition)
-        {
-            aprc |= condition;
-        }
-        foreach (var condition in ClearCondition)
-        {
-            clrc |= condition;
-        }
-        foreach (var condition in ActionCondition)
-        {
-            actc |= condition;
-        }
-
-        image = GetComponent<Image>();
-
-        if (StageSelector.AppearFlagTable.HasFlag(aprc) &&
-            StageSelector.ClearFlagTable.HasFlag(clrc) &&
-            StageSelector.ActionFlagTable.HasFlag(actc))
-        {
-            StageSelector.AppearFlagTable |= stage;
-        }
-
-        image.enabled = StageSelector.AppearFlagTable.HasFlag(stage);
-    }
+    public List<StageBit> AppearCondition;
+    public List<StageBit> ClearCondition;
+    public List<ActionBit> ActionCondition;
+    public List<RequestParam> requests;
 
     public void OnClick()
     {
-        ScoreLoader.Stage = stage;
+        ScoreLoader.Stage = this;
         StageSelector.RequestList = requests.ToArray();
     }
 }
