@@ -17,6 +17,8 @@ public class StageManager : MonoBehaviour
     {
         ScoreLoader.Score = 0;
         requests = StageSelector.RequestList;
+
+        TalkPanel.Hide(true);
     }
 
     public void AddScore()

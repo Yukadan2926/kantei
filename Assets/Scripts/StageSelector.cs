@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor.SceneManagement;
@@ -73,5 +74,10 @@ public class StageSelector : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Select()
+    {
+        GetComponent<SceneLoader>().LoadScene($"Request_{RequestList[0].SceneName}");
     }
 }
