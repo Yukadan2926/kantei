@@ -1,24 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [DefaultExecutionOrder(-1)]
 public class StageManager : MonoBehaviour
 {
-    public int index = 0;
-    public RequestParam[] requests;
+    public static StageManager instance;
+    static int current = 0;
 
     [SerializeField] Button realButton;
     [SerializeField] Button fakeButton;
+    [SerializeField] Canvas realCanvas;
+    [SerializeField] Canvas fakeCanvas;
+
+    SceneLoader sceneLoader;
+    RequestParam[] requests;
 
     private void Start()
     {
-        ScoreLoader.Score = 0;
-        requests = StageSelector.RequestList;
+        instance = this;
 
-        TalkPanel.Hide(true);
+        realCanvas.enabled = false;
+        fakeCanvas.enabled = false;
+
+        sceneLoader = GetComponent<SceneLoader>();
+        requests = StageSelector.RequestList;
+        if (requests ==  null)
+        {
+            requests = new RequestParam[0];
+        }
+
+        ScoreLoader.Score = 0;
     }
 
     public void AddScore()
@@ -26,18 +39,20 @@ public class StageManager : MonoBehaviour
         ScoreLoader.Score += 1;
     }
 
-    public void AddOnClickCallack()
+    public void Proceed()
     {
-        realButton.onClick.RemoveAllListeners();
-        fakeButton.onClick.RemoveAllListeners();
+        realCanvas.enabled = false;
+        fakeCanvas.enabled = false;
 
-        if (requests[index].Answer)
+        current++;
+        if (current < requests.Length)
         {
-            realButton.onClick.AddListener(AddScore);
+            sceneLoader.TransScene($"Request_{requests[current].SceneName}");
         }
         else
         {
-            fakeButton.onClick.AddListener(AddScore);
+            sceneLoader.TransScene("Result");
+            current = 0;
         }
     }
 }

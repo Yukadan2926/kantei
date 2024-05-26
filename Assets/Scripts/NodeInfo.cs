@@ -15,9 +15,16 @@ public class NodeInfo : MonoBehaviour
     public List<ActionBit> ActionCondition;
     public List<RequestParam> requests;
 
+    public NodeInfo(NodeInfo nodeInfo)
+    {
+        this.stage = nodeInfo.stage;
+        this.border = nodeInfo.border;
+        this.requests = nodeInfo.requests;
+    }
+
     public void OnClick()
     {
-        ScoreLoader.Stage = this;
+        ScoreLoader.DecideStage(stage, border);
         StageSelector.RequestList = requests.ToArray();
     }
 }

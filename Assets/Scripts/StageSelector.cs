@@ -76,7 +76,7 @@ public class StageSelector : MonoBehaviour
         }
     }
 
-    public void Select()
+    public void Begin()
     {
         GetComponent<SceneLoader>().LoadScene($"Request_{RequestList[0].SceneName}");
     }

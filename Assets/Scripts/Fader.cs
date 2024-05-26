@@ -1,19 +1,21 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Fader : MonoBehaviour
 {
-    public Image image;
-    float fadeSec = 1.0f;
-    bool fadeOut = false;
-    [SerializeField] Canvas canvas;
+    [SerializeField] float fadeSec = 1.0f;
+    [SerializeField] Image image;
+    bool fadeOut;
 
     // Start is called before the first frame update
     void Start()
     {
+        image.color = new Color(0, 0, 0, 0);
+        fadeOut = true;
 
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -26,6 +28,10 @@ public class Fader : MonoBehaviour
             {
                 a += 1 / fadeSec * Time.deltaTime;
             }
+            else
+            {
+                fadeOut = false;
+            }
         }
         else
         {
@@ -33,32 +39,12 @@ public class Fader : MonoBehaviour
             {
                 a -= 1 / fadeSec * Time.deltaTime;
             }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         image.color = new Color(0, 0, 0, a);
-    }
-
-    public void Fade(float sec)
-    {
-        fadeSec = sec;
-        fadeOut = !fadeOut;
-
-        StartCoroutine(hideCanvas());
-    }
-
-    IEnumerator hideCanvas()
-    {
-        if (canvas != null)
-        {
-            if (fadeOut)
-            {
-                canvas.enabled = false;
-            }
-            else
-            {
-                yield return new WaitForSeconds(fadeSec);
-                canvas.enabled = true;
-            }
-        }
     }
 }

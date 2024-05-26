@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Request_EiffelTower.unity
     guid: 1bb9bae77da47d140bca2392f72d979d
+  - enabled: 1
+    path: Assets/Scenes/Request_Ring.unity
+    guid: 41ee5b00b7bc9e1408ad875e938073e3
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: cce9a3a37891cdb4a82ed10dfc6b0c73, type: 2}
