@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +7,7 @@ public static class InputHepler
     private static Vector3 StartTouchPosition;
 
     /// <summary>
-    /// ƒ}ƒEƒX‚Ì¶ƒNƒŠƒbƒN‚Åƒhƒ‰ƒbƒO‚µ‚½Û‚ÉƒŒƒCƒLƒƒƒXƒg‚Åƒqƒbƒg‚µ‚½ŠJn‚ÆI—¹À•W‚ğ•Ô‚·
+    /// ãƒã‚¦ã‚¹ã®å·¦ã‚¯ãƒªãƒƒã‚¯ã§ãƒ‰ãƒ©ãƒƒã‚°ã—ãŸéš›ã«ãƒ¬ã‚¤ã‚­ãƒ£ã‚¹ãƒˆã§ãƒ’ãƒƒãƒˆã—ãŸé–‹å§‹ã¨çµ‚äº†åº§æ¨™ã‚’è¿”ã™
     /// </summary>
     public static void GetMouseDragFromTo(Transform target, Camera camera, 
         out RaycastHit from, out RaycastHit to)
@@ -15,16 +15,16 @@ public static class InputHepler
         from = new RaycastHit();
         to = new RaycastHit();
 
-        //  ƒhƒ‰ƒbƒOŠJnˆÊ’u‚ğ•Û‘¶
-        if (Input.GetMouseButtonDown(0))
+        //  ãƒ‰ãƒ©ãƒƒã‚°é–‹å§‹ä½ç½®ã‚’ä¿å­˜
+        if (Input.GetMouseButtonDown(1))
         {
             StartTouchPosition = Input.mousePosition;
         }
 
-        //  ƒhƒ‰ƒbƒO’†‚Í‘OƒtƒŒ[ƒ€‚Æ‚Ì·‚ğ‰ÁZ‚·‚é
-        if (Input.GetMouseButton(0))
+        //  ãƒ‰ãƒ©ãƒƒã‚°ä¸­ã¯å‰ãƒ•ãƒ¬ãƒ¼ãƒ ã¨ã®å·®ã‚’åŠ ç®—ã™ã‚‹
+        if (Input.GetMouseButton(1))
         {
-            //  ƒJƒƒ‰•ûŒü‚©‚çŒ©‚½ƒhƒ‰ƒbƒO‚Ì‰ñ“]Šp‚ğŒvZ
+            //  ã‚«ãƒ¡ãƒ©æ–¹å‘ã‹ã‚‰è¦‹ãŸãƒ‰ãƒ©ãƒƒã‚°ã®å›è»¢è§’ã‚’è¨ˆç®—
 
             var ray = camera.ScreenPointToRay(Input.mousePosition);
             if (!Physics.Raycast(ray, out var hit))

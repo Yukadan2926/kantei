@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,12 +13,13 @@ public class Shape : MonoBehaviour
     float t;
 
     [SerializeField] float moveSec = 1.0f;
-    [SerializeField] float distance = 1.0f;
+    [SerializeField] float nearest = 1.0f;
+    float distance;
 
     Vector3 pointDist;
     EventTrigger trigger;
 
-    [SerializeField] float rollSpeed = 1.0f;
+    float rollSpeed = 1.0f;
     bool rolling = false;
 
     private void Start()
@@ -40,6 +40,9 @@ public class Shape : MonoBehaviour
 
         trigger.triggers.Add(entry1);
         trigger.triggers.Add(entry2);
+
+        distance = 2.9f;
+        rollSpeed = 30 - (distance - nearest) * 10;
     }
 
     private void Update()
@@ -87,6 +90,17 @@ public class Shape : MonoBehaviour
                 transform.Rotate(axis, dragAngle * rollSpeed, Space.World);
             }
         }
+
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if (scroll != 0 && isClicked)
+        {
+            distance -= scroll;
+            distance = Mathf.Clamp(distance, nearest, 2.9f);
+
+            rollSpeed = 30 - (distance - nearest) * 10;
+
+            transform.position = Camera.main.transform.position + Camera.main.transform.forward * distance;
+        }
     }
 
     public void OnClick()
@@ -117,6 +131,14 @@ public class Shape : MonoBehaviour
         if (isClicked)
         {
             rolling = true;
+
+            if (!Input.GetMouseButton(0))
+            {
+                return;
+            }
+
+            pos.z = distance;
+            transform.position = Camera.main.ScreenToWorldPoint(pos) + pointDist;
         }
         else
         {
@@ -144,13 +166,20 @@ public class Shape : MonoBehaviour
 
     void ProcDistance(BaseEventData eventData)
     {
+        Vector3 pos = Input.mousePosition;
+
         if (isClicked)
         {
+            if (!Input.GetMouseButton(0))
+            {
+                return;
+            }
 
+            pos.z = distance;
+            pointDist = transform.position - Camera.main.ScreenToWorldPoint(pos);
         }
         else
         {
-            Vector3 pos = Input.mousePosition;
             Ray ray = Camera.main.ScreenPointToRay(pos);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))

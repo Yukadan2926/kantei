@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TalkPanel : MonoBehaviour
 {
+    [SerializeField] Person person;
     [SerializeField] List<Toggle> LinesList;
     int index;
 
