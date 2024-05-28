@@ -2274,7 +2274,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2013880709}
         m_TargetAssemblyTypeName: Person, Assembly-CSharp
-        m_MethodName: Happy
+        m_MethodName: Surprise
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3480,7 +3480,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2013880709}
         m_TargetAssemblyTypeName: Person, Assembly-CSharp
-        m_MethodName: Surprise
+        m_MethodName: Happy
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

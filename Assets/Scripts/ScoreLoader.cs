@@ -6,7 +6,7 @@ using UnityEngine;
 public class ScoreLoader : MonoBehaviour
 {
     //public static NodeInfo Stage;
-    public static int Score = 0;
+    public static int Score;
 
     static StageBit Stage;
     static int Border;

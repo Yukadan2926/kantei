@@ -32,6 +32,8 @@ public class StageSelector : MonoBehaviour
 
     private void Start()
     {
+        ScoreLoader.Score = 0;
+
         foreach (var node in nodeList) node.image.enabled = false;
         foreach (var edge in edgeList) edge.text.enabled = false;
         foreach (var label in dateLabelList) label.enabled = false;

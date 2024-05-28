@@ -143,7 +143,7 @@ public class SearchBar : MonoBehaviour
     public void LinkCheck(TextMeshProUGUI tmp)
     {
         Vector2 pos = Input.mousePosition;
-        int link = TMP_TextUtilities.FindIntersectingLink(tmp, pos, null);
+        int link = TMP_TextUtilities.FindIntersectingLink(tmp, pos, Camera.main);
 
         if (link != -1)
         {
@@ -161,6 +161,26 @@ public class SearchBar : MonoBehaviour
                 {
                     historyDropDown.value = infos[index].num;
                 }
+
+                return;
+            }
+
+            string style = tmp.textInfo.linkInfo[link].GetLinkID();
+            index = MatchAll(style);
+            if (index >= 0)
+            {
+                toggles[index].isOn = true;
+
+                if (infos[index].num < 0)
+                {
+                    AddHistory(infos[index]);
+                }
+                else
+                {
+                    historyDropDown.value = infos[index].num;
+                }
+
+                return;
             }
         }
     }

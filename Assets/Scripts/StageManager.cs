@@ -30,8 +30,6 @@ public class StageManager : MonoBehaviour
         {
             requests = new RequestParam[0];
         }
-
-        ScoreLoader.Score = 0;
     }
 
     public void AddScore()

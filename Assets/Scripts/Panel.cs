@@ -21,6 +21,8 @@ public class Panel : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     void DragMove()
     {
+        //Debug.Log($"{Input.mousePosition.x},{}")
+
         Vector3 pos = Vector3.zero;
         pos.x = Input.mousePosition.x + dist.x;
         pos.y = Input.mousePosition.y + dist.y;
@@ -29,7 +31,7 @@ public class Panel : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     void ProcDistance()
     {
-        dist = transform.position - Input.mousePosition;
+        dist = transform.localPosition - Input.mousePosition;
     }
 
     public void OnBeginDrag(PointerEventData eventData)

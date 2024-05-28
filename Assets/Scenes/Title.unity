@@ -265,7 +265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -95.800476}
+  m_AnchoredPosition: {x: 0, y: -96.980835}
   m_SizeDelta: {x: 0, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &354327844
@@ -896,6 +896,7 @@ MonoBehaviour:
   ClearCondition: 00000000
   ActionCondition: 00000000
   requests:
+  - {fileID: 11400000, guid: 3f287072a692845468d11ae588bc5b00, type: 2}
   - {fileID: 11400000, guid: db0808384fffe5449a681eb7f31c3274, type: 2}
 --- !u!1 &807336106
 GameObject:
@@ -2609,7 +2610,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 699841234}
   m_Direction: 2
   m_Value: 0.6480001
-  m_Size: 0.35270008
+  m_Size: 0.34472442
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
