@@ -15,11 +15,9 @@ public class NodeInfo : MonoBehaviour
     public List<ActionBit> ActionCondition;
     public List<RequestParam> requests;
 
-    public NodeInfo(NodeInfo nodeInfo)
+    private void Start()
     {
-        this.stage = nodeInfo.stage;
-        this.border = nodeInfo.border;
-        this.requests = nodeInfo.requests;
+        GameObject.Find("StageSelector").GetComponent<StageSelector>().nodeList.Add(this);
     }
 
     public void OnClick()

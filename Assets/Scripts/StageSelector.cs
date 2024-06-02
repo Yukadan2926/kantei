@@ -9,15 +9,15 @@ public enum StageBit
     Day1_1 = 0b_0001,
     Day2_1 = 0b_0010,
     Day3_1 = 0b_0100,
-    Day3_2 = 0b_1000,
+    Day4_1 = 0b_1000,
 }
 
 public enum ActionBit
 {
     None,
-    FailedDay2_1 = 0b_0001,
 }
 
+[DefaultExecutionOrder(1)]
 public class StageSelector : MonoBehaviour
 {
     public static StageBit AppearFlagTable = StageBit.None;
@@ -26,9 +26,9 @@ public class StageSelector : MonoBehaviour
 
     public static RequestParam[] RequestList;
 
-    [SerializeField] List<NodeInfo> nodeList;
-    [SerializeField] List<EdgeInfo> edgeList;
-    [SerializeField] List<TextMeshProUGUI> dateLabelList;
+    public List<NodeInfo> nodeList;
+    public List<EdgeInfo> edgeList;
+    public List<TextMeshProUGUI> dateLabelList;
 
     private void Start()
     {

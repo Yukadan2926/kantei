@@ -194,7 +194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -820}
+  m_AnchoredPosition: {x: 0, y: -820}
   m_SizeDelta: {x: 460, y: 1875}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5434150
@@ -501,8 +501,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2077311170}
   m_HandleRect: {fileID: 2077311169}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.12841529
+  m_Value: 0.9999999
+  m_Size: 0.18251364
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -974,7 +974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -327.50006}
+  m_AnchoredPosition: {x: 0, y: -327.49997}
   m_SizeDelta: {x: 460, y: 890}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &68431376
@@ -1457,8 +1457,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2014960787}
   m_HandleRect: {fileID: 2014960786}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.13202237
+  m_Value: 1
+  m_Size: 0.18764043
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3373,7 +3373,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -340}
+  m_AnchoredPosition: {x: 0, y: -339.99997}
   m_SizeDelta: {x: 460, y: 915}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &327956091
@@ -3876,7 +3876,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -327.50006}
+  m_AnchoredPosition: {x: 0, y: -327.49997}
   m_SizeDelta: {x: 460, y: 890}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &348070295
@@ -4935,8 +4935,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1953474188}
   m_HandleRect: {fileID: 1953474187}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.13202237
+  m_Value: 1
+  m_Size: 0.18764043
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6558,7 +6558,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -395}
+  m_AnchoredPosition: {x: 0, y: -394.99994}
   m_SizeDelta: {x: 460, y: 1025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &596596651
@@ -6724,7 +6724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -670}
+  m_AnchoredPosition: {x: 0, y: -670}
   m_SizeDelta: {x: 460, y: 1575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &598353996
@@ -6750,7 +6750,7 @@ MonoBehaviour:
   m_text: "\r\n\n\n\n\n\r\n\u6982\u8981\r\n\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\uFF08Luminarticos\uFF09\u306F\u3001\u5148\u9032\u7684\u306A\u30C7\u30B6\u30A4\u30F3\u3068\u9AD8\u54C1\u8CEA\u306A\u7D20\u6750\u3092\u7D44\u307F\u5408\u308F\u305B\u305F\u3001\u4E16\u754C\u7684\u306B\u8A8D\u77E5\u3055\u308C\u305F\u30D5\u30A1\u30C3\u30B7\u30E7\u30F3\u30D6\u30E9\u30F3\u30C9\u3067\u3042\u308B\u3002\u305D\u306E\u540D\u524D\u306F\u3001\u30E9\u30C6\u30F3\u8A9E\u3067\u300C\u5149\u300D\u3092\u610F\u5473\u3059\u308B\u300Clumen\u300D\u3068\u3001\u30AE\u30EA\u30B7\u30E3\u8A9E\u3067\u300C\u82B8\u8853\u300D\u3092\u610F\u5473\u3059\u308B\u300C\u03C4\u03AD\u03C7\u03BD\u03B7\u300D\u304B\u3089\u6D3E\u751F\u3057\u3066\u304A\u308A\u3001\u305D\u306E\u540D\u306E\u901A\u308A\u3001\u30A2\u30FC\u30C8\u3068\u30E9\u30B0\u30B8\u30E5\u30A2\u30EA\u30FC\u304C\u878D\u5408\u3057\u305F\u72EC\u5275\u7684\u306A\u30A2\u30A4\u30C6\u30E0\u3092\u63D0\u4F9B\u3057\u3066\u3044\u308B\u3002\r\n\r\n\u6B74\u53F2\r\n\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306F\u30011924\u5E74\u306B\u30CB\u30E5\u30FC\u30E8\u30FC\u30AF\u3067\u82E5\u304D\u30C7\u30B6\u30A4\u30CA\u30FC\u3001\u30A8\u30EC\u30CA\u30FB\u30B5\u30F3\u30C1\u30A7\u30B9\u306B\u3088\u3063\u3066\u8A2D\u7ACB\u3055\u308C\u305F\u3002\u5F7C\u5973\u306E\u30D3\u30B8\u30E7\u30F3\u306F\u3001\u4F1D\u7D71\u7684\u306A\u30D5\u30A1\u30C3\u30B7\u30E7\u30F3\u306B\u9769\u65B0\u3092\u3082\u305F\u3089\u3057\u3001\u90FD\u4F1A\u7684\u3067\u6D17\u7DF4\u3055\u308C\u305F\u30B9\u30BF\u30A4\u30EB\u3092\u63D0\u6848\u3059\u308B\u3053\u3068\u3067\u3042\u308A\u3001\u305D\u306E\u72EC\u81EA\u306E\u30A2\u30D7\u30ED\u30FC\u30C1\u304C\u30D6\u30E9\u30F3\u30C9\u306E\u6210\u529F\u306B\u3064\u306A\u304C\u3063\u305F\u30021950\u5E74\u306B\u306F\u30D0\u30C3\u30B0\u306E\u30B3\u30EC\u30AF\u30B7\u30E7\u30F3\u3092\u59CB\u3081\u3001\u5F93\u6765\u306E\u90FD\u4F1A\u7684\u306A\u30C7\u30B6\u30A4\u30F3\u306B\u4F1D\u7D71\u7684\u3067\u6C11\u65CF\u7684\u306A\u6A21\u69D8\u3092\u52A0\u3048\u305F\u30AA\u30EA\u30B8\u30CA\u30EB\u30E9\u30A4\u30F3\u3092\u767A\u8868\u3057\u3066\u3055\u3089\u306B\u6025\u6210\u9577\u3092\u9042\u3052\u305F\u3002\r\n\r\n\u30B3\u30EC\u30AF\u30B7\u30E7\u30F3\r\n\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30B3\u30EC\u30AF\u30B7\u30E7\u30F3\u306F\u3001\u5B63\u7BC0\u3054\u3068\u306B\u767A\u8868\u3055\u308C\u3001\u591A\u69D8\u306A\u30C6\u30FC\u30DE\u3084\u30A4\u30F3\u30B9\u30D4\u30EC\u30FC\u30B7\u30E7\u30F3\u306B\u57FA\u3065\u3044\u3066\u30C7\u30B6\u30A4\u30F3\u3055\u308C\u3066\u3044\u308B\u3002\u305D\u306E\u7279\u5FB4\u306F\u3001\u65AC\u65B0\u306A\u30AB\u30C3\u30C6\u30A3\u30F3\u30B0\u3084\u30E2\u30C0\u30F3\u306A\u30C7\u30A3\u30C6\u30FC\u30EB\u3001\u72EC\u5275\u7684\u306A\u30D7\u30EA\u30F3\u30C8\u3001\u305D\u3057\u3066\u5148\u9032\u7684\u306A\u30C6\u30AF\u30B9\u30C1\u30E3\u30FC\u3060\u3002\u30D5\u30A1\u30C3\u30B7\u30E7\u30F3\u754C\u3067\u306E\u30C8\u30EC\u30F3\u30C9\u3092\u30EA\u30FC\u30C9\u3057\u3001\u5E38\u306B\u65B0\u3057\u3044\u30A2\u30A4\u30C7\u30A2\u3068\u30B3\u30F3\u30BB\u30D7\u30C8\u3092\u8FFD\u6C42\u3057\u3066\u3044\u308B\u3002\r\n\r\n\u7279\u5FB4\r\n\u30A8\u30B3\u30D5\u30EC\u30F3\u30C9\u30EA\u30FC\u306A\u7D20\u6750:
     \u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306F\u3001\u74B0\u5883\u306B\u914D\u616E\u3057\u305F\u7D20\u6750\u306E\u4F7F\u7528\u306B\u91CD\u70B9\u3092\u7F6E\u3044\u3066\u304A\u308A\u3001\u6301\u7D9A\u53EF\u80FD\u6027\u3068\u30B9\u30BF\u30A4\u30EB\u306E\u878D\u5408\u3092\u5B9F\u73FE\u3057\u3066\u3044\u308B\u3002\r\n\u30AB\u30B9\u30BF\u30DE\u30A4\u30BA\u30AA\u30D7\u30B7\u30E7\u30F3:
     \u9867\u5BA2\u306E\u500B\u6027\u3092\u5C0A\u91CD\u3057\u3001\u30AB\u30B9\u30BF\u30DE\u30A4\u30BA\u30AA\u30FC\u30C0\u30FC\u306E\u30AA\u30D7\u30B7\u30E7\u30F3\u3092\u63D0\u4F9B\u3057\u3066\u3044\u308B\u3002\u9867\u5BA2\u306F\u81EA\u5206\u306E\u30A2\u30A4\u30C7\u30A2\u3084\u30B9\u30BF\u30A4\u30EB\u3092\u53CD\u6620\u3055\u305B\u305F\u30A2\u30A4\u30C6\u30E0\u3092\u624B\u306B\u5165\u308C\u308B\u3053\u3068\u304C\u3067\u304D\u308B\u3002\r\n\r\n\u793E\u4F1A\u8CA2\u732E\r\n
-    \u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306F\u3001\u793E\u4F1A\u7684\u8CAC\u4EFB\u3092\u679C\u305F\u3059\u305F\u3081\u306B\u3001\u6148\u5584\u56E3\u4F53\u3084\u5730\u57DF\u30B3\u30DF\u30E5\u30CB\u30C6\u30A3\u306B\u5BC4\u4ED8\u3092\u884C\u3044\u3001\u6301\u7D9A\u53EF\u80FD\u306A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u306B\u7A4D\u6975\u7684\u306B\u53C2\u52A0\u3057\u3066\u3044\u308B\u3002\r\n\r\n\u30B3\u30EC\u30AF\u30B7\u30E7\u30F3\r\n\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30D0\u30C3\u30B0\u30B3\u30EC\u30AF\u30B7\u30E7\u30F3\u306B\u306F\u3001\u69D8\u3005\u306A\u30B9\u30BF\u30A4\u30EB\u3068\u30B5\u30A4\u30BA\u306E\u30D0\u30C3\u30B0\u304C\u542B\u307E\u308C\u3066\u3044\u308B\u3002\u4EE5\u4E0B\u306F\u305D\u306E\u4E00\u90E8\u3067\u3042\u308B\u3002\r\n\r\n\r\n<style=\"Link\"><link=\"\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30B7\u30C6\u30A3\u30C8\u30FC\u30C8\u30D0\u30C3\u30B0\r\n\">\u30B7\u30C6\u30A3\u30C8\u30FC\u30C8\u30D0\u30C3\u30B0</link></style>\r\n\r\n\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30B7\u30B0\u30CD\u30C1\u30E3\u30FC\u30C7\u30B6\u30A4\u30F3\u306E\u4E00\u3064\u3067\u3042\u308A\u3001\u90FD\u4F1A\u7684\u3067\u5B9F\u7528\u7684\u306A\u30C8\u30FC\u30C8\u30D0\u30C3\u30B0\u3002\u9AD8\u54C1\u8CEA\u306E\u5408\u6210\u76AE\u9769\u3084\u30EA\u30B5\u30A4\u30AF\u30EB\u7D20\u6750\u3092\u4F7F\u7528\u3057\u3001\u8010\u4E45\u6027\u306B\u512A\u308C\u308B\u3002\u591A\u6570\u306E\u30DD\u30B1\u30C3\u30C8\u3084\u53CE\u7D0D\u30B9\u30DA\u30FC\u30B9\u304C\u3042\u308A\u3001\u65E5\u5E38\u306E\u6301\u3061\u904B\u3073\u306B\u4FBF\u5229\u3002\r\n\r\n<style=\"Link\"><link=\"\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30A8\u30EC\u30AC\u30F3\u30C8\u30AF\u30E9\u30C3\u30C1\r\n\">\u30A8\u30EC\u30AC\u30F3\u30C8\u30AF\u30E9\u30C3\u30C1</link></style>\r\n\r\n\u30D1\u30FC\u30C6\u30A3\u30FC\u3084\u7279\u5225\u306A\u30A4\u30D9\u30F3\u30C8\u306B\u6700\u9069\u306A\u30A8\u30EC\u30AC\u30F3\u30C8\u306A\u30AF\u30E9\u30C3\u30C1\u30D0\u30C3\u30B0\u3002\r\n\u30B7\u30EB\u30AF\u3084\u30B5\u30C6\u30F3\u306E\u7D20\u6750\u3092\u4F7F\u7528\u3057\u3001\u4E0A\u54C1\u306A\u5149\u6CA2\u3068\u8CEA\u611F\u3092\u6F14\u51FA\u3002\r\n\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30A2\u30A4\u30B3\u30F3\u3067\u3042\u308B\u30ED\u30B4\u5165\u308A\u306E\u91D1\u5C5E\u30AF\u30E9\u30B9\u30D7\u304C\u7279\u5FB4\u7684\u3002\r\n\r\n<style=\"Link\"><link=\"\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30A2\u30FC\u30D0\u30F3\u30D0\u30C3\u30AF\u30D1\u30C3\u30AF\r\n\">\u30A2\u30FC\u30D0\u30F3\u30D0\u30C3\u30AF\u30D1\u30C3\u30AF</link></style>\r\n\r\n\u90FD\u4F1A\u7684\u3067\u30E2\u30C0\u30F3\u306A\u30C7\u30B6\u30A4\u30F3\u306E\u30D0\u30C3\u30AF\u30D1\u30C3\u30AF\u3002\u8EFD\u91CF\u3067\u8010\u4E45\u6027\u304C\u3042\u308A\u3001\u5FEB\u9069\u306A\u65E5\u5E38\u306E\u6301\u3061\u904B\u3073\u306B\u9069\u3057\u3066\u3044\u308B\u3002\u30E9\u30C3\u30D7\u30C8\u30C3\u30D7\u3084\u30BF\u30D6\u30EC\u30C3\u30C8\u306A\u3069\u306E\u30C6\u30AF\u30CE\u30ED\u30B8\u30FC\u6A5F\u5668\u306B\u5BFE\u5FDC\u3057\u305F\u5C02\u7528\u306E\u53CE\u7D0D\u30B9\u30DA\u30FC\u30B9\u3092\u5099\u3048\u3066\u3044\u308B\u3002\r\n\r\n\u9769\u65B0\u7684\u306A\u30C7\u30B6\u30A4\u30F3\r\n\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30D0\u30C3\u30B0\u306F\u3001\u5E38\u306B\u6700\u65B0\u306E\u30C8\u30EC\u30F3\u30C9\u3068\u591A\u69D8\u5E2D\u306B\u5BCC\u3093\u3060\u6C11\u65CF\u6587\u5316\u306E\u30C7\u30B6\u30A4\u30F3\u3092\u53D6\u308A\u5165\u308C\u3066\u304A\u308A\u3001\u30E6\u30FC\u30B6\u30FC\u306B\u9769\u65B0\u7684\u306A\u30B9\u30BF\u30A4\u30EB\u3092\u63D0\u4F9B\u3057\u3066\u3044\u308B\u3002\u4F7F\u308F\u308C\u3066\u3044\u308B\u7D20\u6750\u306F\u6700\u9AD8\u7D1A\u3067\u3001\u5408\u6210\u76AE\u9769\u3084\u30EA\u30B5\u30A4\u30AF\u30EB\u7D20\u6750\u306A\u3069\u3001\u74B0\u5883\u306B\u914D\u616E\u3057\u305F\u9AD8\u54C1\u8CEA\u306A\u7D20\u6750\u3092\u4F7F\u7528\u3057\u3066\u304A\u308A\u3001\u8010\u4E45\u6027\u3068\u6301\u7D9A\u53EF\u80FD\u6027\u3092\u4E21\u7ACB\u3057\u3066\u3044\u308B\u3002\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30D0\u30C3\u30B0\u306F\u3001\u3055\u307E\u3056\u307E\u306A\u7528\u9014\u306B\u5BFE\u5FDC\u3057\u3066\u304A\u308A\u3001\u65E5\u5E38\u306E\u4F7F\u3044\u52DD\u624B\u304B\u3089\u7279\u5225\u306A\u30A4\u30D9\u30F3\u30C8\u307E\u3067\u5E45\u5E83\u3044\u30B7\u30FC\u30F3\u3067\u6D3B\u8E8D\u3059\u308B\u3002\u3000\r\n\r\n\u5C55\u958B:\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u5E97\u8217\u306F\u3001\u4E16\u754C\u4E2D\u306E\u4E3B\u8981\u90FD\u5E02\u306B\u5C55\u958B\u3055\u308C\u3066\u304A\u308A\u3001\u305D\u306E\u7F8E\u3057\u304F\u30C7\u30B6\u30A4\u30F3\u3055\u308C\u305F\u5E97\u8217\u306F\u30D6\u30E9\u30F3\u30C9\u306E\u54F2\u5B66\u3092\u4F53\u73FE\u3057\u3066\u3044\u308B\u3002\u3055\u3089\u306B\u3001\u30AA\u30F3\u30E9\u30A4\u30F3\u30B9\u30C8\u30A2\u3082\u5145\u5B9F\u3057\u3066\u304A\u308A\u3001\u4E16\u754C\u4E2D\u306E\u9867\u5BA2\u306B\u88FD\u54C1\u3092\u63D0\u4F9B\u3057\u3066\u3044\u308B\u3002\r\n\r\n\u95A2\u9023\u30EA\u30F3\u30AF:\r\n\u516C\u5F0F\u30A6\u30A7\u30D6\u30B5\u30A4\u30C8\r\nInstagram\r\nFacebook\r\nTwitter\r"
+    \u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306F\u3001\u793E\u4F1A\u7684\u8CAC\u4EFB\u3092\u679C\u305F\u3059\u305F\u3081\u306B\u3001\u6148\u5584\u56E3\u4F53\u3084\u5730\u57DF\u30B3\u30DF\u30E5\u30CB\u30C6\u30A3\u306B\u5BC4\u4ED8\u3092\u884C\u3044\u3001\u6301\u7D9A\u53EF\u80FD\u306A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u306B\u7A4D\u6975\u7684\u306B\u53C2\u52A0\u3057\u3066\u3044\u308B\u3002\r\n\r\n\u30B3\u30EC\u30AF\u30B7\u30E7\u30F3\r\n\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30D0\u30C3\u30B0\u30B3\u30EC\u30AF\u30B7\u30E7\u30F3\u306B\u306F\u3001\u69D8\u3005\u306A\u30B9\u30BF\u30A4\u30EB\u3068\u30B5\u30A4\u30BA\u306E\u30D0\u30C3\u30B0\u304C\u542B\u307E\u308C\u3066\u3044\u308B\u3002\u4EE5\u4E0B\u306F\u305D\u306E\u4E00\u90E8\u3067\u3042\u308B\u3002\r\n\r\n\r\n<style=\"Link\"><link=\"\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30B7\u30C6\u30A3\u30C8\u30FC\u30C8\u30D0\u30C3\u30B0\">\u30B7\u30C6\u30A3\u30C8\u30FC\u30C8\u30D0\u30C3\u30B0</link></style>\r\n\r\n\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30B7\u30B0\u30CD\u30C1\u30E3\u30FC\u30C7\u30B6\u30A4\u30F3\u306E\u4E00\u3064\u3067\u3042\u308A\u3001\u90FD\u4F1A\u7684\u3067\u5B9F\u7528\u7684\u306A\u30C8\u30FC\u30C8\u30D0\u30C3\u30B0\u3002\u9AD8\u54C1\u8CEA\u306E\u5408\u6210\u76AE\u9769\u3084\u30EA\u30B5\u30A4\u30AF\u30EB\u7D20\u6750\u3092\u4F7F\u7528\u3057\u3001\u8010\u4E45\u6027\u306B\u512A\u308C\u308B\u3002\u591A\u6570\u306E\u30DD\u30B1\u30C3\u30C8\u3084\u53CE\u7D0D\u30B9\u30DA\u30FC\u30B9\u304C\u3042\u308A\u3001\u65E5\u5E38\u306E\u6301\u3061\u904B\u3073\u306B\u4FBF\u5229\u3002\r\n\r\n<style=\"Link\"><link=\"\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30A8\u30EC\u30AC\u30F3\u30C8\u30AF\u30E9\u30C3\u30C1\">\u30A8\u30EC\u30AC\u30F3\u30C8\u30AF\u30E9\u30C3\u30C1</link></style>\r\n\r\n\u30D1\u30FC\u30C6\u30A3\u30FC\u3084\u7279\u5225\u306A\u30A4\u30D9\u30F3\u30C8\u306B\u6700\u9069\u306A\u30A8\u30EC\u30AC\u30F3\u30C8\u306A\u30AF\u30E9\u30C3\u30C1\u30D0\u30C3\u30B0\u3002\r\n\u30B7\u30EB\u30AF\u3084\u30B5\u30C6\u30F3\u306E\u7D20\u6750\u3092\u4F7F\u7528\u3057\u3001\u4E0A\u54C1\u306A\u5149\u6CA2\u3068\u8CEA\u611F\u3092\u6F14\u51FA\u3002\r\n\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30A2\u30A4\u30B3\u30F3\u3067\u3042\u308B\u30ED\u30B4\u5165\u308A\u306E\u91D1\u5C5E\u30AF\u30E9\u30B9\u30D7\u304C\u7279\u5FB4\u7684\u3002\r\n\r\n<style=\"Link\"><link=\"\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30A2\u30FC\u30D0\u30F3\u30D0\u30C3\u30AF\u30D1\u30C3\u30AF\">\u30A2\u30FC\u30D0\u30F3\u30D0\u30C3\u30AF\u30D1\u30C3\u30AF</link></style>\r\n\r\n\u90FD\u4F1A\u7684\u3067\u30E2\u30C0\u30F3\u306A\u30C7\u30B6\u30A4\u30F3\u306E\u30D0\u30C3\u30AF\u30D1\u30C3\u30AF\u3002\u8EFD\u91CF\u3067\u8010\u4E45\u6027\u304C\u3042\u308A\u3001\u5FEB\u9069\u306A\u65E5\u5E38\u306E\u6301\u3061\u904B\u3073\u306B\u9069\u3057\u3066\u3044\u308B\u3002\u30E9\u30C3\u30D7\u30C8\u30C3\u30D7\u3084\u30BF\u30D6\u30EC\u30C3\u30C8\u306A\u3069\u306E\u30C6\u30AF\u30CE\u30ED\u30B8\u30FC\u6A5F\u5668\u306B\u5BFE\u5FDC\u3057\u305F\u5C02\u7528\u306E\u53CE\u7D0D\u30B9\u30DA\u30FC\u30B9\u3092\u5099\u3048\u3066\u3044\u308B\u3002\r\n\r\n\u9769\u65B0\u7684\u306A\u30C7\u30B6\u30A4\u30F3\r\n\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30D0\u30C3\u30B0\u306F\u3001\u5E38\u306B\u6700\u65B0\u306E\u30C8\u30EC\u30F3\u30C9\u3068\u591A\u69D8\u5E2D\u306B\u5BCC\u3093\u3060\u6C11\u65CF\u6587\u5316\u306E\u30C7\u30B6\u30A4\u30F3\u3092\u53D6\u308A\u5165\u308C\u3066\u304A\u308A\u3001\u30E6\u30FC\u30B6\u30FC\u306B\u9769\u65B0\u7684\u306A\u30B9\u30BF\u30A4\u30EB\u3092\u63D0\u4F9B\u3057\u3066\u3044\u308B\u3002\u4F7F\u308F\u308C\u3066\u3044\u308B\u7D20\u6750\u306F\u6700\u9AD8\u7D1A\u3067\u3001\u5408\u6210\u76AE\u9769\u3084\u30EA\u30B5\u30A4\u30AF\u30EB\u7D20\u6750\u306A\u3069\u3001\u74B0\u5883\u306B\u914D\u616E\u3057\u305F\u9AD8\u54C1\u8CEA\u306A\u7D20\u6750\u3092\u4F7F\u7528\u3057\u3066\u304A\u308A\u3001\u8010\u4E45\u6027\u3068\u6301\u7D9A\u53EF\u80FD\u6027\u3092\u4E21\u7ACB\u3057\u3066\u3044\u308B\u3002\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u30D0\u30C3\u30B0\u306F\u3001\u3055\u307E\u3056\u307E\u306A\u7528\u9014\u306B\u5BFE\u5FDC\u3057\u3066\u304A\u308A\u3001\u65E5\u5E38\u306E\u4F7F\u3044\u52DD\u624B\u304B\u3089\u7279\u5225\u306A\u30A4\u30D9\u30F3\u30C8\u307E\u3067\u5E45\u5E83\u3044\u30B7\u30FC\u30F3\u3067\u6D3B\u8E8D\u3059\u308B\u3002\u3000\r\n\r\n\u5C55\u958B:\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u5E97\u8217\u306F\u3001\u4E16\u754C\u4E2D\u306E\u4E3B\u8981\u90FD\u5E02\u306B\u5C55\u958B\u3055\u308C\u3066\u304A\u308A\u3001\u305D\u306E\u7F8E\u3057\u304F\u30C7\u30B6\u30A4\u30F3\u3055\u308C\u305F\u5E97\u8217\u306F\u30D6\u30E9\u30F3\u30C9\u306E\u54F2\u5B66\u3092\u4F53\u73FE\u3057\u3066\u3044\u308B\u3002\u3055\u3089\u306B\u3001\u30AA\u30F3\u30E9\u30A4\u30F3\u30B9\u30C8\u30A2\u3082\u5145\u5B9F\u3057\u3066\u304A\u308A\u3001\u4E16\u754C\u4E2D\u306E\u9867\u5BA2\u306B\u88FD\u54C1\u3092\u63D0\u4F9B\u3057\u3066\u3044\u308B\u3002\r\n\r\n\u95A2\u9023\u30EA\u30F3\u30AF:\r\n\u516C\u5F0F\u30A6\u30A7\u30D6\u30B5\u30A4\u30C8\r\nInstagram\r\nFacebook\r\nTwitter\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6504fbb644b37e74f8fe499e008c819f, type: 2}
   m_sharedMaterial: {fileID: 5466803352705376845, guid: 6504fbb644b37e74f8fe499e008c819f, type: 2}
@@ -7003,7 +7003,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 592357835}
-  m_PlaneDistance: 3
+  m_PlaneDistance: 0.5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -7118,7 +7118,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1799513252}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.114634134
+  m_Size: 0.16292685
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7535,8 +7535,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1357885773}
   m_HandleRect: {fileID: 1357885772}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.12841529
+  m_Value: 0.9999999
+  m_Size: 0.18251364
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7661,8 +7661,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1169967073}
   m_HandleRect: {fileID: 1169967072}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.13905329
+  m_Value: 1.0000001
+  m_Size: 0.19763322
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8502,7 +8502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -327.50006}
+  m_AnchoredPosition: {x: 0, y: -327.49997}
   m_SizeDelta: {x: 460, y: 890}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &819738384
@@ -8714,8 +8714,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1156827739}
   m_HandleRect: {fileID: 1156827738}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.13202237
+  m_Value: 1
+  m_Size: 0.18764043
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9741,7 +9741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -327.50006}
+  m_AnchoredPosition: {x: 0, y: -327.49997}
   m_SizeDelta: {x: 460, y: 890}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &957258314
@@ -9906,7 +9906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -340}
+  m_AnchoredPosition: {x: 0, y: -339.99997}
   m_SizeDelta: {x: 460, y: 915}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &967571858
@@ -10451,7 +10451,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1066017851}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.06266667
+  m_Size: 0.08906667
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12075,8 +12075,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2065427368}
   m_HandleRect: {fileID: 2065427367}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.13202237
+  m_Value: 1
+  m_Size: 0.18764043
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12701,7 +12701,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -327.50006}
+  m_AnchoredPosition: {x: 0, y: -327.49997}
   m_SizeDelta: {x: 460, y: 890}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1232633195
@@ -13471,8 +13471,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 832320534}
   m_HandleRect: {fileID: 832320533}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.13202237
+  m_Value: 1
+  m_Size: 0.18764043
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13550,7 +13550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -327.50006}
+  m_AnchoredPosition: {x: 0, y: -327.49997}
   m_SizeDelta: {x: 460, y: 890}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1313638978
@@ -13715,7 +13715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -327.50006}
+  m_AnchoredPosition: {x: 0, y: -327.49997}
   m_SizeDelta: {x: 460, y: 890}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1314722997
@@ -14380,8 +14380,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427574193}
   m_HandleRect: {fileID: 427574192}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.13202237
+  m_Value: 1
+  m_Size: 0.18764043
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14751,7 +14751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -305}
+  m_AnchoredPosition: {x: 0, y: -305.00003}
   m_SizeDelta: {x: 460, y: 845}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1497462489
@@ -17249,7 +17249,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2045451474}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.07460318
+  m_Size: 0.10603175
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -19208,8 +19208,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 524865939}
   m_HandleRect: {fileID: 524865938}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.13202237
+  m_Value: 1
+  m_Size: 0.18764043
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -19709,8 +19709,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1970238880}
   m_HandleRect: {fileID: 1970238879}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.13202237
+  m_Value: 1
+  m_Size: 0.18764043
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20962,7 +20962,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -327.50003}
+  m_AnchoredPosition: {x: 0, y: -327.49997}
   m_SizeDelta: {x: 460, y: 890}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2139594050

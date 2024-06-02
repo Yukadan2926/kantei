@@ -19,6 +19,8 @@ public static class CreateRequestParamsFromCsv
             string line = reader.ReadLine();
             string[] param = line.Split(',');
 
+
+
             //var asset = ScriptableObject.CreateInstance<RequestParam>();
             //string name = $"{AssetPath}Data.asset";
             //AssetDatabase.CreateAsset(asset, name);

@@ -1,29 +1,57 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TalkPanel : MonoBehaviour
 {
-    [SerializeField] Person person;
-    [SerializeField] List<Toggle> LinesList;
-    int index;
+    TextMeshProUGUI text;
+    List<string> lines;
+    int curLine;
+    bool end = false;
+
+    Canvas appraisePanel;
 
     private void Start()
     {
-        index = 0;
+        text = transform.Find("Background/Line").gameObject.GetComponent<TextMeshProUGUI>();
+
+        curLine = 0;
+        text.text = lines[curLine];
+
+        appraisePanel = GameObject.Find("appraisePanel").GetComponent<Canvas>();
+        appraisePanel.enabled = false;
+    }
+
+    public void SetLines(RequestParam param, int num)
+    {
+        lines = param.events[num].lines;
+
+        if (num <= 1)
+        {
+            end = true;
+        }
     }
 
     public void OnClick()
     {
-        index++;
-        if (index < LinesList.Count)
+        curLine++;
+        if (curLine < lines.Count)
         {
-            LinesList[index].isOn = true;
+            text.text = lines[curLine];
         }
         else
         {
-            StageManager.instance.Proceed();
+            if (!end)
+            {
+                appraisePanel.enabled = true;
+            }
+            else
+            {
+                StageManager.instance.Proceed();
+            }
+
+            Destroy(gameObject);
         }
     }
 }

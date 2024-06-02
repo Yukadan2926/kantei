@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,12 +8,11 @@ using UnityEngine.UI;
 public class StageManager : MonoBehaviour
 {
     public static StageManager instance;
-    static int current = 0;
+    static int curReq = 0;
 
     [SerializeField] Button realButton;
     [SerializeField] Button fakeButton;
-    [SerializeField] Canvas realCanvas;
-    [SerializeField] Canvas fakeCanvas;
+    [SerializeField] GameObject panelObj;
 
     SceneLoader sceneLoader;
     RequestParam[] requests;
@@ -20,9 +20,6 @@ public class StageManager : MonoBehaviour
     private void Start()
     {
         instance = this;
-
-        realCanvas.enabled = false;
-        fakeCanvas.enabled = false;
 
         sceneLoader = GetComponent<SceneLoader>();
         requests = StageSelector.RequestList;
@@ -32,25 +29,32 @@ public class StageManager : MonoBehaviour
         }
     }
 
-    public void AddScore()
+    public void Judge(bool ans)
     {
-        ScoreLoader.Score += 1;
+        if (ans == requests[curReq].Answer)
+        {
+            ScoreLoader.Score += 1;
+        }
     }
 
     public void Proceed()
     {
-        realCanvas.enabled = false;
-        fakeCanvas.enabled = false;
-
-        current++;
-        if (current < requests.Length)
+        curReq++;
+        if (curReq < requests.Length)
         {
-            sceneLoader.TransScene($"Request_{requests[current].SceneName}");
+            sceneLoader.TransScene($"Request_{requests[curReq].SceneName}");
         }
         else
         {
             sceneLoader.TransScene("Result");
-            current = 0;
+            curReq = 0;
         }
+    }
+
+    public void TalkEvent(int num)
+    {
+        GameObject inst = Instantiate(panelObj);
+        TalkPanel talkPanel = inst.GetComponent<TalkPanel>();
+        talkPanel.SetLines(requests[curReq], num);
     }
 }

@@ -24,14 +24,6 @@ public class ScoreLoader : MonoBehaviour
         {
             StageSelector.ClearFlagTable |= Stage;
         }
-
-        if (Stage == StageBit.Day2_1)
-        {
-            if (Score <= Border)
-            {
-                StageSelector.ActionFlagTable |= ActionBit.FailedDay2_1;
-            }
-        }
     }
 
     public static void DecideStage(StageBit stage, int border)

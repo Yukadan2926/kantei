@@ -7,4 +7,11 @@ public class RequestParam : ScriptableObject
 {
     public string SceneName = string.Empty;
     public bool Answer = false;
+    public List<TalkLines> events;
+}
+
+[System.Serializable]
+public class TalkLines
+{
+    public List<string> lines;
 }
