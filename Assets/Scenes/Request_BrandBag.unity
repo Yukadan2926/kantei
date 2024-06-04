@@ -383,6 +383,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19da8cb25a89104c9ce9ebb19a8851a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &187845870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,7 +1626,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5F7C\u6C0F\u306B\u3082\u3089\u3063\u305F\u30D0\u30C3\u30B0\u306A\u3093\u3060\u3051\u3069\u3001\u3082\u3046\u3044\u3089\u306A\u304F\u306A\u3063\u305F\u304B\u3089\u58F2\u308A\u305F\u3044\u3093\u3060\u3088\u306D\u3002\n\u4E00\u5FDC\u307E\u3060\u4F7F\u3063\u305F\u3053\u3068\u306A\u3044\u304B\u3089\u65B0\u54C1\u3060\u3057\u3001\u25CB\u25CB(\u30D6\u30E9\u30F3\u30C9\u540D)\u306E\u3060\u304B\u3089\u9AD8\u304F\u58F2\u308C\u308B\u3068\u601D\u3046\u304B\u3089\u9451\u5B9A\u304A\u9858\u3044\uFF5E\u3002"
+  m_text: "\u5F7C\u6C0F\u306B\u3082\u3089\u3063\u305F\u30D0\u30C3\u30B0\u306A\u3093\u3060\u3051\u3069\u3001\u3082\u3046\u3044\u3089\u306A\u304F\u306A\u3063\u305F\u304B\u3089\u58F2\u308A\u305F\u3044\u3093\u3060\u3088\u306D\u3002\n\u4E00\u5FDC\u307E\u3060\u4F7F\u3063\u305F\u3053\u3068\u306A\u3044\u304B\u3089\u65B0\u54C1\u3060\u3057\u3001\u30EB\u30DF\u30CA\u30EB\u30C6\u30A3\u30B3\u30B9\u306E\u3060\u304B\u3089\u9AD8\u304F\u58F2\u308C\u308B\u3068\u601D\u3046\u304B\u3089\u9451\u5B9A\u304A\u9858\u3044\uFF5E\u3002"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6504fbb644b37e74f8fe499e008c819f, type: 2}
   m_sharedMaterial: {fileID: 5466803352705376845, guid: 6504fbb644b37e74f8fe499e008c819f, type: 2}
@@ -2022,7 +2025,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 797196290}
+  m_TargetGraphic: {fileID: 1435459361}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:

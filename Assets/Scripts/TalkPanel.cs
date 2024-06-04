@@ -10,6 +10,7 @@ public class TalkPanel : MonoBehaviour
     int curLine;
     bool end = false;
 
+    BaseEvent manager;
     Canvas appraisePanel;
 
     private void Start()
@@ -44,6 +45,7 @@ public class TalkPanel : MonoBehaviour
         {
             if (!end)
             {
+
                 appraisePanel.enabled = true;
             }
             else
