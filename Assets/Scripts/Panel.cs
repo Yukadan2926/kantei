@@ -30,7 +30,6 @@ public class Panel : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     void ProcDistance()
     {
-        factor = 
         dist = transform.localPosition - Input.mousePosition;
     }
 
