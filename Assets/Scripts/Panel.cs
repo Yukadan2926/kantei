@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Panel : MonoBehaviour, IBeginDragHandler, IDragHandler
 {
+    float factor;
     Vector3 dist;
 
     // Start is called before the first frame update
@@ -21,8 +22,6 @@ public class Panel : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     void DragMove()
     {
-        //Debug.Log($"{Input.mousePosition.x},{}")
-
         Vector3 pos = Vector3.zero;
         pos.x = Input.mousePosition.x + dist.x;
         pos.y = Input.mousePosition.y + dist.y;
@@ -31,6 +30,7 @@ public class Panel : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     void ProcDistance()
     {
+        factor = 
         dist = transform.localPosition - Input.mousePosition;
     }
 
@@ -42,5 +42,10 @@ public class Panel : MonoBehaviour, IBeginDragHandler, IDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         DragMove();
+    }
+
+    private void FixedUpdate()
+    {
+        Debug.Log($"{Input.mousePosition.x},{Input.mousePosition.y}");
     }
 }
