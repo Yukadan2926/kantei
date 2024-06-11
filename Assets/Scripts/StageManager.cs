@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [DefaultExecutionOrder(-1)]
@@ -25,7 +26,11 @@ public class StageManager : MonoBehaviour
         requests = StageSelector.RequestList;
         if (requests ==  null)
         {
-            requests = new RequestParam[0];
+            string sceneName = SceneManager.GetActiveScene().name.Substring(8);
+            RequestParam param = Resources.Load($"{sceneName}_Data") as RequestParam;
+            
+            requests = new RequestParam[1];
+            requests[0] = param;
         }
     }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Shape : MonoBehaviour
+public class Shape : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     bool isClicked = false;
     Vector3 targetPos;
@@ -13,7 +13,7 @@ public class Shape : MonoBehaviour
     float t;
 
     [SerializeField] float moveSec = 1.0f;
-    [SerializeField] float nearest = 1.0f;
+    float nearest;
     float distance;
 
     Vector3 pointDist;
@@ -21,6 +21,9 @@ public class Shape : MonoBehaviour
 
     float rollSpeed = 1.0f;
     bool rolling = false;
+
+    bool onPointer;
+    SphereCollider sphere;
 
     private void Start()
     {
@@ -43,6 +46,9 @@ public class Shape : MonoBehaviour
 
         distance = 2.9f;
         rollSpeed = 30 - (distance - nearest) * 10;
+
+        sphere = transform.Find("collider").gameObject.GetComponent<SphereCollider>();
+        nearest = sphere.radius + 0.1f;
     }
 
     private void Update()
@@ -92,7 +98,7 @@ public class Shape : MonoBehaviour
         }
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (scroll != 0 && isClicked)
+        if (scroll != 0 && isClicked && onPointer)
         {
             distance -= scroll;
             distance = Mathf.Clamp(distance, nearest, 2.9f);
@@ -187,5 +193,15 @@ public class Shape : MonoBehaviour
                 pointDist = transform.position - hit.point;
             }
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        onPointer = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        onPointer = false;
     }
 }
