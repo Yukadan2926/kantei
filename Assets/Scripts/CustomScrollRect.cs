@@ -11,7 +11,7 @@ public class CustomScrollRect : ScrollRect
     protected override void Start()
     {
         base.Start();
-        panel = GameObject.Find("searchPanel").GetComponent<Panel>();
+        panel = GameObject.Find("SearchPanel").GetComponent<Panel>();
     }
 
     public override void OnBeginDrag(PointerEventData eventData)

@@ -44,11 +44,11 @@ public class Shape : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         trigger.triggers.Add(entry1);
         trigger.triggers.Add(entry2);
 
-        distance = 2.9f;
-        rollSpeed = 30 - (distance - nearest) * 10;
-
         sphere = transform.Find("collider").gameObject.GetComponent<SphereCollider>();
-        nearest = sphere.radius + 0.1f;
+        
+        distance = 3.0f;
+        nearest = sphere.radius + 0.5f;
+        rollSpeed = 30 - (distance - nearest) * 10;
     }
 
     private void Update()
@@ -101,7 +101,7 @@ public class Shape : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (scroll != 0 && isClicked && onPointer)
         {
             distance -= scroll;
-            distance = Mathf.Clamp(distance, nearest, 2.9f);
+            distance = Mathf.Clamp(distance, nearest, 3.0f);
 
             rollSpeed = 30 - (distance - nearest) * 10;
 

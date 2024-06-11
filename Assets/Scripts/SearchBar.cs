@@ -43,7 +43,7 @@ public class SearchBar : MonoBehaviour
             }
         }
 
-        Instantiate(notFound);
+        Instantiate(notFound, transform);
     }
 
     public void LoadHistory()

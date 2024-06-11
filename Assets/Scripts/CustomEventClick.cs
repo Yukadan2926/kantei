@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,7 +17,7 @@ public class CustomEventClick : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (Vector2.Distance(beginPos, eventData.position) < 1.0f)
+        if (Vector2.Distance(beginPos, eventData.position) < 10.0f)
         {
             customClick.Invoke();
         }
