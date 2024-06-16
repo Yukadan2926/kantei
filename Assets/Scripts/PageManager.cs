@@ -9,28 +9,34 @@ public class PageManager : MonoBehaviour
     public int pageNum { get; private set; } = -1;
     public string pageName = "";
 
-    static GameObject panel;
+    static Canvas current;
+    static SearchBar searchBar;
     static TMP_Dropdown history;
     Canvas canvas;
-    Toggle toggle;
+    TextMeshProUGUI tmp;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (panel == null)
+        if (searchBar == null)
         {
-            panel = transform.parent.gameObject;
+            searchBar = transform.parent.gameObject.GetComponent<SearchBar>();
         }
 
         if (history == null)
         {
-            history = panel.transform.Find("History").gameObject.GetComponent<TMP_Dropdown>();
+            history = searchBar.gameObject.transform.Find("History").gameObject.GetComponent<TMP_Dropdown>();
         }
 
-        panel.GetComponent<SearchBar>().AddPage(this);
+        searchBar.AddPage(this);
         canvas = GetComponent<Canvas>();
-        toggle = GetComponent<Toggle>();
-        canvas.enabled = toggle.isOn;
+        canvas.enabled = false;
+
+        Transform description = transform.Find("Scroll View/Viewport/Content/description");
+        if (description != null)
+        {
+            tmp = description.gameObject.GetComponent<TextMeshProUGUI>();
+        }
 
         if (pageName == "Home")
         {
@@ -46,15 +52,45 @@ public class PageManager : MonoBehaviour
 
     public void Display()
     {
-        toggle.isOn = true;
+        history.value = pageNum;
+    }
+
+    public void Swap()
+    {
+        if (current != null)
+        {
+            current.enabled = false;
+        }
+        canvas.enabled = true;
+        current = canvas;
     }
 
     public void AddHistory()
     {
         history.options.Add(new TMP_Dropdown.OptionData(pageName));
-        history.value = history.options.Count - 1;
-        history.RefreshShownValue();
         pageNum = history.options.Count - 1;
-        Display();
+        history.value = pageNum;
+        history.RefreshShownValue();
+        Swap();
+    }
+
+    public void LinkCheck()
+    {
+        if (tmp == null)
+        {
+            return;
+        }
+
+        Vector2 pos = Input.mousePosition;
+        int link = TMP_TextUtilities.FindIntersectingLink(tmp, pos, null);
+
+        if (link != -1)
+        {
+            string text = tmp.textInfo.linkInfo[link].GetLinkText();
+            if (searchBar.Search(text)) return;
+
+            string style = tmp.textInfo.linkInfo[link].GetLinkID();
+            if (searchBar.Search(style)) return;
+        }
     }
 }

@@ -23,27 +23,63 @@ public class SearchBar : MonoBehaviour
         pages.Add(page);
     }
 
-    public void Search()
+    private int MatchWord(string word)
     {
         for (int i = 0; i < pages.Count; i++)
         {
-            if (pages[i].pageName == inputField.text)
+            if (pages[i].pageName == word)
             {
-                if (pages[i].pageNum > -1)
-                {
-                    pages[i].Display();
-                }
-                else
-                {
-                    pages[i].AddHistory();
-                }
-
-                inputField.text = "";
-                return;
+                return i;
             }
         }
 
-        Instantiate(notFound, transform);
+        return -1;
+    }
+
+    public void Search()
+    {
+        int index = MatchWord(inputField.text);
+        if (index > -1)
+        {
+            if (pages[index].pageNum > -1)
+            {
+                pages[index].Display();
+            }
+            else
+            {
+                pages[index].AddHistory();
+            }
+            inputField.text = "";
+        }
+
+        if (inputField.text != "")
+        {
+            Instantiate(notFound, transform);
+        }
+    }
+
+    public bool Search(string word)
+    {
+        int index = MatchWord(word);
+        if (index > -1)
+        {
+            if (pages[index].pageNum > -1)
+            {
+                pages[index].Display();
+            }
+            else
+            {
+                pages[index].AddHistory();
+            }
+            inputField.text = "";
+            return true;
+        }
+
+        if (inputField.text != "")
+        {
+            Instantiate(notFound, transform);
+        }
+        return false;
     }
 
     public void LoadHistory()
@@ -52,54 +88,9 @@ public class SearchBar : MonoBehaviour
         {
             if (pages[i].pageNum == history.value)
             {
-                pages[i].Display();
+                pages[i].Swap();
                 return;
             }
         }
     }
-
-    //public void LinkCheck(TextMeshProUGUI tmp)
-    //{
-    //    Vector2 pos = Input.mousePosition;
-    //    int link = TMP_TextUtilities.FindIntersectingLink(tmp, pos, Camera.main);
-
-    //    if (link != -1)
-    //    {
-    //        string text = tmp.textInfo.linkInfo[link].GetLinkText();
-    //        int index = MatchAll(text);
-    //        if (index >= 0)
-    //        {
-    //            toggles[index].isOn = true;
-
-    //            if (infos[index].num < 0)
-    //            {
-    //                AddHistory(infos[index]);
-    //            }
-    //            else
-    //            {
-    //                historyDropDown.value = infos[index].num;
-    //            }
-
-    //            return;
-    //        }
-
-    //        string style = tmp.textInfo.linkInfo[link].GetLinkID();
-    //        index = MatchAll(style);
-    //        if (index >= 0)
-    //        {
-    //            toggles[index].isOn = true;
-
-    //            if (infos[index].num < 0)
-    //            {
-    //                AddHistory(infos[index]);
-    //            }
-    //            else
-    //            {
-    //                historyDropDown.value = infos[index].num;
-    //            }
-
-    //            return;
-    //        }
-    //    }
-    //}
 }
