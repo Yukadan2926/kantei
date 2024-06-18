@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class Shape : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Shape : MonoBehaviour
 {
     bool isClicked = false;
     Vector3 targetPos;
@@ -12,43 +13,56 @@ public class Shape : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     Quaternion putRot;
     float t;
 
-    [SerializeField] float moveSec = 1.0f;
+    [SerializeField] float moveSec = 0.2f;
     float nearest;
     float distance;
 
     Vector3 pointDist;
-    EventTrigger trigger;
 
     float rollSpeed = 1.0f;
     bool rolling = false;
 
-    bool onPointer;
+    public bool onPointer { get; set; } = false;
     SphereCollider sphere;
+
+    EventTrigger trigger;
 
     private void Start()
     {
         putPos = targetPos = transform.position;
         putRot = targetRot = transform.rotation;
 
-
-        trigger = gameObject.AddComponent<EventTrigger>();
-
-        EventTrigger.Entry entry1 = new EventTrigger.Entry();
-        entry1.eventID = EventTriggerType.BeginDrag;
-        entry1.callback.AddListener(ProcDistance);
-
-        EventTrigger.Entry entry2 = new EventTrigger.Entry();
-        entry2.eventID = EventTriggerType.Drag;
-        entry2.callback.AddListener(DragMove);
-
-        trigger.triggers.Add(entry1);
-        trigger.triggers.Add(entry2);
-
         sphere = transform.Find("collider").gameObject.GetComponent<SphereCollider>();
         
         distance = 3.0f;
         nearest = sphere.radius + 0.5f;
         rollSpeed = 30 - (distance - nearest) * 10;
+
+
+        CustomEventClick click = gameObject.AddComponent<CustomEventClick>();
+        click.customClick = new UnityEvent();
+        click.customClick.AddListener(OnClick);
+
+        EventTrigger trigger = gameObject.AddComponent<EventTrigger>();
+        EventTrigger.Entry entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.BeginDrag;
+        entry.callback.AddListener(ProcDistance);
+        trigger.triggers.Add(entry);
+
+        entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.Drag;
+        entry.callback.AddListener(DragMove);
+        trigger.triggers.Add(entry);
+
+        entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerEnter;
+        entry.callback.AddListener((data) => { onPointer = true; });
+        trigger.triggers.Add(entry);
+
+        entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerExit;
+        entry.callback.AddListener((data) => { onPointer = false; });
+        trigger.triggers.Add(entry);
     }
 
     private void Update()
@@ -130,7 +144,7 @@ public class Shape : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 
-    void DragMove(BaseEventData eventData)
+    public void DragMove(BaseEventData data)
     {
         Vector3 pos = Input.mousePosition;
 
@@ -170,7 +184,7 @@ public class Shape : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 
-    void ProcDistance(BaseEventData eventData)
+    public void ProcDistance(BaseEventData data)
     {
         Vector3 pos = Input.mousePosition;
 
@@ -193,15 +207,5 @@ public class Shape : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 pointDist = transform.position - hit.point;
             }
         }
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        onPointer = true;
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        onPointer = false;
     }
 }

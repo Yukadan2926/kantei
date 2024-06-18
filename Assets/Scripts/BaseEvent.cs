@@ -7,20 +7,19 @@ public class BaseEvent : MonoBehaviour
 {
     protected StageManager manager;
 
-    [SerializeField] UnityEvent unityEvent;
-
     protected virtual void Start()
     {
         manager = GetComponent<StageManager>();
+        OpeningEvent();
     }
 
-    public virtual void EndEvent(bool chose)
+    public virtual void OpeningEvent()
+    {
+        manager.TalkEvent(2);
+    }
+
+    public virtual void EndingEvent(bool chose)
     {
         manager.TalkEvent(chose ? 0 : 1);
-    }
-
-    public void EventInvoke()
-    {
-        unityEvent.Invoke();
     }
 }

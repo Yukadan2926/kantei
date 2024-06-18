@@ -17,16 +17,15 @@ public class ImageScaler : MonoBehaviour
             panel = GameObject.Find("SearchPanel").transform as RectTransform;
         }
 
-        image = transform as RectTransform;
-        aspect = image.rect.height / image.rect.width;
-
-        image.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, panel.rect.width - 20);
-        image.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, image.rect.width * aspect);
+        image = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        aspect = image.rect.height / image.rect.width;
+
+        image.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, panel.rect.width - 20);
+        image.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, image.rect.width * aspect);
     }
 }

@@ -1,41 +1,56 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class Paper : MonoBehaviour
 {
+    [SerializeField] float moveSec = 0.2f;
+
     bool isClicked = false;
     Vector3 targetPos;
     Quaternion targetRot;
     Vector3 putPos;
     Quaternion putRot;
     float t;
-
-    [SerializeField] float moveSec = 1.0f;
-    [SerializeField] float distance = 1.0f;
-
     Vector3 pointDist;
-    EventTrigger trigger;
+    float nearest;
+    float distance;
+    public bool onPointer { get; set; } = false;
 
     private void Start()
     {
         putPos = targetPos = transform.position;
         putRot = targetRot = transform.rotation;
 
+        distance = 2.0f;
+        nearest = 0.5f;
 
-        trigger = gameObject.AddComponent<EventTrigger>();
+        CustomEventClick click = gameObject.AddComponent<CustomEventClick>();
+        click.customClick = new UnityEvent();
+        click.customClick.AddListener(OnClick);
 
-        EventTrigger.Entry entry1 = new EventTrigger.Entry();
-        entry1.eventID = EventTriggerType.BeginDrag;
-        entry1.callback.AddListener(ProcDistance);
+        EventTrigger trigger = gameObject.AddComponent<EventTrigger>();
+        EventTrigger.Entry entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.BeginDrag;
+        entry.callback.AddListener(ProcDistance);
+        trigger.triggers.Add(entry);
 
-        EventTrigger.Entry entry2 = new EventTrigger.Entry();
-        entry2.eventID = EventTriggerType.Drag;
-        entry2.callback.AddListener(DragMove);
+        entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.Drag;
+        entry.callback.AddListener(DragMove);
+        trigger.triggers.Add(entry);
 
-        trigger.triggers.Add(entry1);
-        trigger.triggers.Add(entry2);
+        entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerEnter;
+        entry.callback.AddListener((data) => { onPointer = true; });
+        trigger.triggers.Add(entry);
+
+        entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerExit;
+        entry.callback.AddListener((data) => { onPointer = false; });
+        trigger.triggers.Add(entry);
     }
 
     private void Update()
@@ -47,6 +62,15 @@ public class Paper : MonoBehaviour
             transform.rotation = Quaternion.Lerp(putRot, targetRot, ft);
 
             t += 1.0f / moveSec * Time.deltaTime;
+        }
+
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if (scroll != 0 && isClicked && onPointer)
+        {
+            distance -= scroll;
+            distance = Mathf.Clamp(distance, nearest, 3.0f);
+
+            transform.position = Camera.main.transform.position + Camera.main.transform.forward * distance;
         }
     }
 
@@ -71,7 +95,7 @@ public class Paper : MonoBehaviour
         }
     }
 
-    void DragMove(BaseEventData eventData)
+    public void DragMove(BaseEventData data)
     {
         Vector3 pos = Input.mousePosition;
 
@@ -104,7 +128,7 @@ public class Paper : MonoBehaviour
         }
     }
 
-    void ProcDistance(BaseEventData eventData)
+    public void ProcDistance(BaseEventData data)
     {
         Vector3 pos = Input.mousePosition;
 
