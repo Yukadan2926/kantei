@@ -20,7 +20,7 @@ public class ScoreLoader : MonoBehaviour
         stageLabel.text = Stage.ToString();
         scoreLabel.text = $"{Score} / {StageSelector.RequestList.Length}";
 
-        if (Score > Border)
+        if (Score >= Border)
         {
             StageSelector.ClearFlagTable |= Stage;
         }

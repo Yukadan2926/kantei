@@ -27,7 +27,7 @@ public class StageManager : MonoBehaviour
         if (requests ==  null)
         {
             string sceneName = SceneManager.GetActiveScene().name.Substring(8);
-            RequestParam param = Resources.Load($"{sceneName}_Data") as RequestParam;
+            RequestParam param = Resources.Load($"Data_{sceneName}") as RequestParam;
             
             requests = new RequestParam[1];
             requests[0] = param;

@@ -28,7 +28,7 @@ public class TalkPanel : MonoBehaviour
     {
         lines = param.events[num].lines;
 
-        if (num <= 1)
+        if (num == 1 || num == 2)
         {
             end = true;
         }
@@ -45,7 +45,6 @@ public class TalkPanel : MonoBehaviour
         {
             if (!end)
             {
-
                 appraisePanel.enabled = true;
             }
             else

@@ -15,11 +15,11 @@ public class BaseEvent : MonoBehaviour
 
     public virtual void OpeningEvent()
     {
-        manager.TalkEvent(2);
+        manager.TalkEvent(0);
     }
 
     public virtual void EndingEvent(bool chose)
     {
-        manager.TalkEvent(chose ? 0 : 1);
+        manager.TalkEvent(chose ? 1 : 2);
     }
 }

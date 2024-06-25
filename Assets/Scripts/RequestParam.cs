@@ -7,9 +7,9 @@ public class RequestParam : ScriptableObject
 {
     public string SceneName = string.Empty;
     public bool Answer = false;
-    public List<TalkLines> events;
     public string Person;
     [TextArea(5, 5)] public string Description;
+    public List<TalkLines> events;
 }
 
 [System.Serializable]

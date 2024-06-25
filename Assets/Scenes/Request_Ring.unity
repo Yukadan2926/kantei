@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 47516795}
   - component: {fileID: 47516797}
-  - component: {fileID: 47516796}
   m_Layer: 0
   m_Name: request
   m_TagString: Untagged
@@ -158,33 +157,6 @@ Transform:
   - {fileID: 907208464}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
---- !u!114 &47516796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47516792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11154e21327049242868d48959942591, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 187845872}
-        m_TargetAssemblyTypeName: TogglePaper, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &47516797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSec: 0.2
-  distance: 1.5
 --- !u!1001 &49722810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -454,7 +425,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 168912779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c1fcd2ad13ff744a44aefda1f0c8b0, type: 3}
+  m_Script: {fileID: 11500000, guid: ab01c1fc6738ff849bc13428347c54af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &187845870
@@ -576,7 +547,6 @@ GameObject:
   m_Component:
   - component: {fileID: 231879812}
   - component: {fileID: 231879815}
-  - component: {fileID: 231879814}
   m_Layer: 0
   m_Name: tresure
   m_TagString: Untagged
@@ -601,33 +571,6 @@ Transform:
   - {fileID: 49722811}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -85, y: 240, z: 0}
---- !u!114 &231879814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231879811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11154e21327049242868d48959942591, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1371777434}
-        m_TargetAssemblyTypeName: TogglePaper, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &231879815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,7 +584,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSec: 0.2
-  nearest: 0.6
 --- !u!1 &378243403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,7 +1041,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 168912786}
         m_TargetAssemblyTypeName: BaseEvent, Assembly-CSharp
-        m_MethodName: EndEvent
+        m_MethodName: EndingEvent
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2102,7 +2044,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 168912786}
         m_TargetAssemblyTypeName: BaseEvent, Assembly-CSharp
-        m_MethodName: EndEvent
+        m_MethodName: EndingEvent
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
