@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,46 +12,49 @@ public class SearchBar : MonoBehaviour
     [SerializeField] TMP_Dropdown history;
     [SerializeField] GameObject notFound;
 
-    List<PageManager> pages = new List<PageManager>();
+    Dictionary<string, PageManager> pageDict = new Dictionary<string, PageManager>();
 
     // Start is called before the first frame update
     void Start()
     {
-        //pages.Clear();
+
     }
 
     public void AddPage(PageManager page)
     {
-        pages.Add(page);
+        pageDict.Add(page.pageName, page);
     }
 
-    private int MatchWord(string word)
+    private PageManager MatchWord(string word)
     {
-        for (int i = 0; i < pages.Count; i++)
+        if (pageDict.ContainsKey(word))
         {
-            if (pages[i].pageName == word)
-            {
-                return i;
-            }
+            return pageDict[word];
         }
 
-        return -1;
+        return null;
+    }
+
+    public void Jump(PageManager page)
+    {
+        if (page.pageNum > -1)
+        {
+            page.Display();
+        }
+        else
+        {
+            page.AddHistory();
+        }
     }
 
     public void Search()
     {
-        int index = MatchWord(inputField.text);
-        if (index > -1)
+        PageManager page = MatchWord(inputField.text);
+        if (page != null)
         {
-            if (pages[index].pageNum > -1)
-            {
-                pages[index].Display();
-            }
-            else
-            {
-                pages[index].AddHistory();
-            }
+            Jump(page);
             inputField.text = "";
+            return;
         }
 
         if (inputField.text != "")
@@ -60,35 +65,23 @@ public class SearchBar : MonoBehaviour
 
     public bool Search(string word)
     {
-        int index = MatchWord(word);
-        if (index > -1)
+        PageManager page = MatchWord(word);
+        if (page != null)
         {
-            if (pages[index].pageNum > -1)
-            {
-                pages[index].Display();
-            }
-            else
-            {
-                pages[index].AddHistory();
-            }
-            inputField.text = "";
+            Jump(page);
             return true;
         }
 
-        if (inputField.text != "")
-        {
-            Instantiate(notFound, transform);
-        }
         return false;
     }
 
     public void LoadHistory()
     {
-        for (int i = 0; i < pages.Count; i++)
+        foreach(PageManager page in pageDict.Values)
         {
-            if (pages[i].pageNum == history.value)
+            if (page.pageNum == history.value)
             {
-                pages[i].Swap();
+                page.Swap();
                 return;
             }
         }

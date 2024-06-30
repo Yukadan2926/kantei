@@ -12,6 +12,8 @@ public class PageParams : ScriptableObject
 public class PageParam
 {
     public string objectName;
+    public bool imagePage;
     public string title;
-    [TextArea(5, 5)] public string description;
+    [TextArea(5, 5)]
+    public string description;
 }

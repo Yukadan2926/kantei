@@ -14,6 +14,7 @@ public class PageManager : MonoBehaviour
     static TMP_Dropdown history;
     Canvas canvas;
     TextMeshProUGUI tmp;
+    Scrollbar scrollbar;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,12 @@ public class PageManager : MonoBehaviour
         if (description != null)
         {
             tmp = description.gameObject.GetComponent<TextMeshProUGUI>();
+        }
+
+        Transform barTrans = transform.Find("Scroll View/Scrollbar Vertical");
+        if (barTrans != null)
+        {
+            scrollbar = barTrans.gameObject.GetComponent<Scrollbar>();
         }
 
         if (pageName == "Home")
@@ -63,6 +70,11 @@ public class PageManager : MonoBehaviour
         }
         canvas.enabled = true;
         current = canvas;
+
+        if (scrollbar != null)
+        {
+            scrollbar.value = 1.0f;
+        }
     }
 
     public void AddHistory()

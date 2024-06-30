@@ -7,7 +7,7 @@ public class ImageScaler : MonoBehaviour
 {
     static RectTransform panel;
     RectTransform image;
-    float aspect;
+    Rect startRect;
 
     // Start is called before the first frame update
     void Start()
@@ -18,14 +18,14 @@ public class ImageScaler : MonoBehaviour
         }
 
         image = GetComponent<RectTransform>();
+        startRect = image.rect;
     }
 
     // Update is called once per frame
     void Update()
     {
-        aspect = image.rect.height / image.rect.width;
-
-        image.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, panel.rect.width - 20);
-        image.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, image.rect.width * aspect);
+        float f = (panel.rect.width - 20) / startRect.width;
+        Vector3 scl = new Vector3(f, f, 1.0f);
+        image.localScale = scl;
     }
 }

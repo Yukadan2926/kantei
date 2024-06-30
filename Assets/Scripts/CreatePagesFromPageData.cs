@@ -58,9 +58,6 @@ public class CreatePagesFromPageData : Object
             titleText.text = page.title;
             descText.text = page.description;
 
-            Transform barTrans = instance.transform.Find("Scroll View/Scrollbar Vertical");
-            barTrans.gameObject.GetComponent<Scrollbar>().value = 1.0f;
-
             instance.SetActive(true);
         }
     }
