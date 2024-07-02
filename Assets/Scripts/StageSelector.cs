@@ -6,10 +6,12 @@ using UnityEngine;
 public enum StageBit
 {
     None,
-    Day1_1 = 0b_0001,
-    Day2_1 = 0b_0010,
-    Day3_1 = 0b_0100,
-    Day4_1 = 0b_1000,
+    Day1_1 = 0b_0000_0001,
+    Day2_1 = 0b_0000_0010,
+    Day3_1 = 0b_0000_0100,
+    Day4_1 = 0b_0000_1000,
+    Day5_1 = 0b_0001_0000,
+    DebugFlag = 0b_0001_1111,
 }
 
 public enum ActionBit
@@ -20,8 +22,8 @@ public enum ActionBit
 [DefaultExecutionOrder(1)]
 public class StageSelector : MonoBehaviour
 {
-    public static StageBit AppearFlagTable = StageBit.None;
-    public static StageBit ClearFlagTable = StageBit.None;
+    public static StageBit AppearFlagTable = StageBit.DebugFlag;
+    public static StageBit ClearFlagTable = StageBit.DebugFlag;
     public static ActionBit ActionFlagTable = ActionBit.None;
 
     public static RequestParam[] RequestList;
