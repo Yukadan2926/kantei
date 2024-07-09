@@ -17,4 +17,7 @@ public class PageParam
     public string title;
     [TextArea(5, 5)]
     public string description;
+
+    [TextArea(1, 5)]
+    public List<string> desc = new List<string>();
 }

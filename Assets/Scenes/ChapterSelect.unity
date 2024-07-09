@@ -688,6 +688,8 @@ MonoBehaviour:
   ActionCondition: 00000000
   requests:
   - {fileID: 11400000, guid: 3f287072a692845468d11ae588bc5b00, type: 2}
+  - {fileID: 11400000, guid: 9d12371ab53bbee408481953ecd8669a, type: 2}
+  - {fileID: 11400000, guid: f64880fa7a71d8f4899d8234bb19658c, type: 2}
 --- !u!1 &516622528
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +989,8 @@ MonoBehaviour:
   ClearCondition: 04000000
   ActionCondition: 00000000
   requests:
+  - {fileID: 11400000, guid: 529fef9d5d9f9794fa7daac3338f839a, type: 2}
+  - {fileID: 11400000, guid: c02b622b1a558b245891a02f98774d23, type: 2}
   - {fileID: 11400000, guid: db0808384fffe5449a681eb7f31c3274, type: 2}
 --- !u!1 &625067340
 GameObject:
@@ -1455,6 +1459,7 @@ MonoBehaviour:
   ClearCondition: 08000000
   ActionCondition: 00000000
   requests:
+  - {fileID: 11400000, guid: c9ff0225d5041024d901a00ab1c8126e, type: 2}
   - {fileID: 11400000, guid: f590c54bcee71db479c4af4b3d9eb297, type: 2}
 --- !u!114 &804376082
 MonoBehaviour:
@@ -2629,6 +2634,7 @@ MonoBehaviour:
   ClearCondition: 02000000
   ActionCondition: 00000000
   requests:
+  - {fileID: 11400000, guid: 40ad360b721949940927da3fe218dac3, type: 2}
   - {fileID: 11400000, guid: 8eb4af8a7d1b3d54f98a2c00d7fb004d, type: 2}
   - {fileID: 11400000, guid: b6347ccda111eb54590640b501f761b8, type: 2}
   - {fileID: 11400000, guid: a8082821d3c7c4a49a7cb86772fe5fd0, type: 2}
@@ -3350,8 +3356,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_HandleRect: {fileID: 699841234}
   m_Direction: 2
-  m_Value: 0.5
-  m_Size: 0.44985503
+  m_Value: 0.49999997
+  m_Size: 0.44970414
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

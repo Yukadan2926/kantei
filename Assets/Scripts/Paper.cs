@@ -17,7 +17,7 @@ public class Paper : MonoBehaviour
     Vector3 pointDist;
     float nearest;
     float distance;
-    public bool onPointer { get; set; } = false;
+    public bool OnPointer { get; set; } = false;
 
     private void Start()
     {
@@ -44,12 +44,12 @@ public class Paper : MonoBehaviour
 
         entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerEnter;
-        entry.callback.AddListener((data) => { onPointer = true; });
+        entry.callback.AddListener((data) => { OnPointer = true; });
         trigger.triggers.Add(entry);
 
         entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerExit;
-        entry.callback.AddListener((data) => { onPointer = false; });
+        entry.callback.AddListener((data) => { OnPointer = false; });
         trigger.triggers.Add(entry);
     }
 
@@ -65,7 +65,7 @@ public class Paper : MonoBehaviour
         }
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (scroll != 0 && isClicked && onPointer)
+        if (scroll != 0 && isClicked && OnPointer)
         {
             distance -= scroll;
             distance = Mathf.Clamp(distance, nearest, 3.0f);
@@ -104,28 +104,6 @@ public class Paper : MonoBehaviour
             pos.z = distance;
             transform.position = Camera.main.ScreenToWorldPoint(pos) + pointDist;
         }
-        else
-        {
-            Ray ray = Camera.main.ScreenPointToRay(pos);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                Vector3 p = hit.point + pointDist;
-
-                if (-3.6 < p.x && p.x < 3.6)
-                {
-                    Vector3 x = transform.position;
-                    x.x = p.x;
-                    transform.position = x;
-                }
-                if (-2.2 < p.z && p.z < 0.8)
-                {
-                    Vector3 z = transform.position;
-                    z.z = p.z;
-                    transform.position = z;
-                }
-            }
-        }
     }
 
     public void ProcDistance(BaseEventData data)
@@ -136,15 +114,6 @@ public class Paper : MonoBehaviour
         {
             pos.z = distance;
             pointDist = transform.position - Camera.main.ScreenToWorldPoint(pos);
-        }
-        else
-        {
-            Ray ray = Camera.main.ScreenPointToRay(pos);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                pointDist = transform.position - hit.point;
-            }
         }
     }
 }
