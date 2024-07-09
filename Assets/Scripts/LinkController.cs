@@ -11,11 +11,6 @@ public class LinkController : MonoBehaviour
 
     Image image;
 
-    //[SerializeField] float fadeSpeed = 2.0f;
-    //float t;
-    //bool reverse;
-
-    // Start is called before the first frame update
     void Start()
     {
         if (searchBar == null)
@@ -24,8 +19,6 @@ public class LinkController : MonoBehaviour
         }
 
         image = GetComponent<Image>();
-        //t = 0;
-        //reverse = true;
 
         EventTrigger trigger = gameObject.AddComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
@@ -46,35 +39,14 @@ public class LinkController : MonoBehaviour
         trigger.triggers.Add(entry);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Color color = image.color;
-
-        //if (!reverse)
-        //{
-        //    t += fadeSpeed * Time.deltaTime;
-        //}
-        //else
-        //{
-        //    t -= fadeSpeed * Time.deltaTime;
-        //}
-        //t = Mathf.Clamp(t, 0, 0.5f);
-        //color.a = t;
-
-        //image.color = color;
-    }
-
     void Visible(BaseEventData data)
     {
         image.color = new Color(image.color.r, image.color.g, image.color.b, 0.5f);
-        //reverse = false;
     }
 
     void Invisible(BaseEventData data)
     {
         image.color = new Color(image.color.r, image.color.g, image.color.b, 0.0f);
-        //reverse = true;
     }
 
     void Jump(BaseEventData data)

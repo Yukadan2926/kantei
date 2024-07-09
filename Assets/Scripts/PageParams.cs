@@ -12,7 +12,8 @@ public class PageParams : ScriptableObject
 public class PageParam
 {
     public string objectName;
-    public bool imagePage;
+    public bool madeOfImage;
+    public bool visibleInSuggest;
     public string title;
     [TextArea(5, 5)]
     public string description;

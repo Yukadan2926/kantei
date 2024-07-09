@@ -62,7 +62,7 @@ public class Suggest : MonoBehaviour
                 int cnt = 0;
                 foreach(PageParam page in pageParams.pages)
                 {
-                    if (page.title.StartsWith(input.text))
+                    if (page.visibleInSuggest && page.title.StartsWith(input.text))
                     {
                         cnt++;
                         hits.Add(page.title);
