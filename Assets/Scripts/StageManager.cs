@@ -11,8 +11,6 @@ public class StageManager : MonoBehaviour
     public static StageManager instance;
     static int curReq = 0;
 
-    [SerializeField] Button realButton;
-    [SerializeField] Button fakeButton;
     [SerializeField] GameObject panelObj;
 
     SceneLoader sceneLoader;

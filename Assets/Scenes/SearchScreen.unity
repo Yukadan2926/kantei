@@ -496,8 +496,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1861970091}
   m_HandleRect: {fileID: 1861970090}
   m_Direction: 2
-  m_Value: 0.4999999
-  m_Size: 0.40089363
+  m_Value: 0.49999994
+  m_Size: 0.37391996
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -914,8 +914,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1330440400}
   m_HandleRect: {fileID: 1330440399}
   m_Direction: 2
-  m_Value: 0.49999985
-  m_Size: 0.39721254
+  m_Value: 0.49999994
+  m_Size: 0.34218246
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2335,8 +2335,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1292984583}
   m_HandleRect: {fileID: 1292984582}
   m_Direction: 2
-  m_Value: 0.49999988
-  m_Size: 0.19968243
+  m_Value: 0.49999994
+  m_Size: 0.18172579
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3844,8 +3844,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1941996774}
   m_HandleRect: {fileID: 1941996773}
   m_Direction: 2
-  m_Value: 0.49999988
-  m_Size: 0.6859852
+  m_Value: 0.5
+  m_Size: 0.6278611
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4266,8 +4266,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1168469925}
   m_HandleRect: {fileID: 1168469924}
   m_Direction: 2
-  m_Value: 0.49999988
-  m_Size: 0.652605
+  m_Value: 0.5
+  m_Size: 0.5997822
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7146,8 +7146,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1476697746}
   m_HandleRect: {fileID: 1476697745}
   m_Direction: 2
-  m_Value: 0.49999994
-  m_Size: 0.36318627
+  m_Value: 0.5
+  m_Size: 0.33076108
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8841,7 +8841,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 853883765}
   m_Direction: 2
   m_Value: 0.5
-  m_Size: 0.2685845
+  m_Size: 0.24491097
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -15570,8 +15570,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 531970335}
   m_HandleRect: {fileID: 531970334}
   m_Direction: 2
-  m_Value: 0.4999998
-  m_Size: 0.46750602
+  m_Value: 0.49999982
+  m_Size: 0.4230223
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -16460,7 +16460,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 375692639}
   m_Direction: 2
   m_Value: 1.0000001
-  m_Size: 0.36331567
+  m_Size: 0.3633157
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -16585,8 +16585,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 565794676}
   m_HandleRect: {fileID: 565794675}
   m_Direction: 2
-  m_Value: 0.49999994
-  m_Size: 0.3631863
+  m_Value: 0.5
+  m_Size: 0.32120246
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18002,8 +18002,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 884904325}
   m_HandleRect: {fileID: 884904324}
   m_Direction: 2
-  m_Value: 0.4999999
-  m_Size: 0.45400044
+  m_Value: 0.5
+  m_Size: 0.4119341
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -19798,7 +19798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1581731995
 Transform:
   m_ObjectHideFlags: 0
@@ -19898,8 +19898,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 91257742}
   m_HandleRect: {fileID: 91257741}
   m_Direction: 2
-  m_Value: 0.4999998
-  m_Size: 0.63399434
+  m_Value: 0.5
+  m_Size: 0.58402276
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20314,8 +20314,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 69892438}
   m_HandleRect: {fileID: 69892437}
   m_Direction: 2
-  m_Value: 0.49999115
-  m_Size: 0.9803268
+  m_Value: 0.4999994
+  m_Size: 0.8333266
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -21358,7 +21358,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2068166132}
   m_Direction: 2
   m_Value: 0.49999994
-  m_Size: 0.37284526
+  m_Size: 0.31929073
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -21684,8 +21684,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 911583023}
   m_HandleRect: {fileID: 911583022}
   m_Direction: 2
-  m_Value: 0.49999988
-  m_Size: 0.6808791
+  m_Value: 0.5
+  m_Size: 0.6235773
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -24541,7 +24541,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1217604081}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.49999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -24743,8 +24743,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1451854390}
   m_HandleRect: {fileID: 1451854389}
   m_Direction: 2
-  m_Value: 0.5000001
-  m_Size: 0.48424777
+  m_Value: 0.5000002
+  m_Size: 0.4366831
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -26265,7 +26265,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 16074841}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0
+  m_Size: 0.412
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -28217,7 +28217,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 1080}
+  m_SizeDelta: {x: 800, y: 1080}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &6023135400925131522
 GameObject:
@@ -28916,7 +28916,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957857138153076918}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
@@ -28954,7 +28954,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957857138153076918}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24399bc2328a28744a1ff02a8d95af86, type: 3}
   m_Name: 

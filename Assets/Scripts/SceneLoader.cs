@@ -36,6 +36,6 @@ public class SceneLoader : MonoBehaviour
     {
         Instantiate(fader);
         yield return new WaitForSeconds(delay);
-        LoadScene(scene);
+        SceneManager.LoadScene(scene);
     }
 }

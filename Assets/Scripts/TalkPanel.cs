@@ -10,7 +10,6 @@ public class TalkPanel : MonoBehaviour
     int curLine;
     bool end = false;
 
-    BaseEvent manager;
     Canvas appraisePanel;
 
     private void Start()
@@ -20,8 +19,8 @@ public class TalkPanel : MonoBehaviour
         curLine = 0;
         text.text = lines[curLine];
 
-        appraisePanel = GameObject.Find("appraisePanel").GetComponent<Canvas>();
-        appraisePanel.enabled = false;
+        //appraisePanel = GameObject.Find("appraisePanel").GetComponent<Canvas>();
+        //appraisePanel.enabled = false;
     }
 
     public void SetLines(RequestParam param, int num)
@@ -45,6 +44,7 @@ public class TalkPanel : MonoBehaviour
         {
             if (!end)
             {
+                appraisePanel = GameObject.Find("appraisePanel").GetComponent<Canvas>();
                 appraisePanel.enabled = true;
             }
             else

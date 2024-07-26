@@ -3,7 +3,22 @@ guid: 239c51c92ae7d6f499c4ffef074e8ec4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Default_Material
+    second: {fileID: 2100000, guid: f35cb619a464aff4c9a03dee7ba4278f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: item1
+    second: {fileID: 2100000, guid: 8d09f418363468644becc78fd2053d79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shop
+    second: {fileID: 2100000, guid: c9bb8547710e307428d84a9935a10451, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -72,7 +87,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 2
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum StageBit
 {
@@ -22,8 +23,8 @@ public enum ActionBit
 [DefaultExecutionOrder(1)]
 public class StageSelector : MonoBehaviour
 {
-    public static StageBit AppearFlagTable = StageBit.DebugFlag;
-    public static StageBit ClearFlagTable = StageBit.DebugFlag;
+    public static StageBit AppearFlagTable = StageBit.None;
+    public static StageBit ClearFlagTable = StageBit.None;
     public static ActionBit ActionFlagTable = ActionBit.None;
 
     public static RequestParam[] RequestList;
@@ -37,7 +38,7 @@ public class StageSelector : MonoBehaviour
         ScoreLoader.Score = 0;
 
         foreach (var node in nodeList) node.image.enabled = false;
-        foreach (var edge in edgeList) edge.text.enabled = false;
+        foreach (var edge in edgeList) edge.SetConnect(0);
         foreach (var label in dateLabelList) label.enabled = false;
 
         foreach (NodeInfo node in nodeList)
@@ -70,8 +71,7 @@ public class StageSelector : MonoBehaviour
                 {
                     if (node.date == edge.after.date)
                     {
-                        edge.text.enabled = true;
-                        edge.text.text = AppearFlagTable.HasFlag(edge.after.stage) ? "o" : "x";
+                        edge.SetConnect(AppearFlagTable.HasFlag(edge.after.stage) ? 2 : 1);
                     }
                 }
             }
@@ -80,6 +80,6 @@ public class StageSelector : MonoBehaviour
 
     public void Begin()
     {
-        GetComponent<SceneLoader>().LoadScene($"Request_{RequestList[0].SceneName}");
+        SceneManager.LoadScene($"Request_{RequestList[0].SceneName}");
     }
 }

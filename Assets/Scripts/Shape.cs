@@ -116,7 +116,6 @@ public class Shape : MonoBehaviour
             distance = Mathf.Clamp(distance, nearest, 3.0f);
 
             rollSpeed = (sphere.radius / distance) * 30;
-            Debug.Log(rollSpeed);
 
             transform.position = Camera.main.transform.position + Camera.main.transform.forward * distance;
         }
